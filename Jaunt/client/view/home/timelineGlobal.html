@@ -1,0 +1,17 @@
+<template name="timelineGlobal">
+    <div class="row">
+        <fieldset class="col-sm-12">
+            <legend>Global Posts</legend>
+            {{#each postsGlobal}}
+            <blockquote class="lead">
+                <small>{{message}}</small>
+            </blockquote>
+            {{else}}
+            <p class="lead text-center">
+                There are no new <i>Global Posts</i> to be displayed
+            </p>
+            {{/each}}
+        </fieldset>
+    </div>
+
+</template>

@@ -1,0 +1,12 @@
+<template name="home">
+    {{#if currentUser}}
+    <section class="col-sm-12">
+        {{> post}} {{> timeline}}
+    </section>
+    {{else}}
+    <div class="text-center">
+        <h1>Jaunt</h1>
+        <h3>Not logged in? click on "Sign In/Up"</h3> {{> timelineGlobal}}
+    </div>
+    {{/if}}
+</template>
