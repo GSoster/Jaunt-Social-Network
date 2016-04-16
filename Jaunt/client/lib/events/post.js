@@ -3,7 +3,8 @@ Template.post.events({
         e.preventDefault();
         var textarea = template.find("textarea");
         Post.insert({
-            message: textarea.value
+            message: textarea.value,
+            createdOn: new Date()
         });
         textarea.value = "";
     }

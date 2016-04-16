@@ -1,14 +1,14 @@
 <template name="timeline">
     <div class="row">
         <fieldset class="col-sm-12">
-            <legend>Ultimos posts</legend>
+            <legend>Posts</legend>
             {{#each posts}}
             <blockquote class="lead">
                 <small>{{message}}</small>
             </blockquote>
             {{else}}
             <p class="lead text-center">
-                Nenhum post encontrado
+                There are no Posts
             </p>
             {{/each}}
         </fieldset>
