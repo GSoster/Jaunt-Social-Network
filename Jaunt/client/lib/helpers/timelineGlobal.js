@@ -1,10 +1,6 @@
 Template.timelineGlobal.helpers({
     postsGlobal: function () {
-        return Post.find({}, {
-            sort: {
-                date: -1
-            }
-        });
+        return Posts.listGlobal();
     }
 
 });

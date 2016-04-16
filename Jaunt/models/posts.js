@@ -1,11 +1,11 @@
-Post = new Meteor.Collection('posts');
+Posts = new Meteor.Collection('posts');
 
 
 /**
  * Publishes a post. AKA inserts a post in the database.
  * @param {String} message - the message to be saved
  */
-Post.publish = function (message) {
+Posts.publish = function (message) {
     this.insert({
         message: message,
         date: new Date(),
@@ -18,7 +18,7 @@ Post.publish = function (message) {
  * Lists all the posts from an user
  * @param {int} userId 
  */
-Post.list = function (userId) {
+Posts.list = function (userId) {
     return this.find({
         userId: userId
     }, {
@@ -28,6 +28,13 @@ Post.list = function (userId) {
     });
 };
 
-Post.listGlobal = function () {
-
-}
+/**
+ * Lists all the lastest posts
+ */
+Posts.listGlobal = function () {
+    return this.find({}, {
+        sort: {
+            date: -1
+        }
+    });
+};
