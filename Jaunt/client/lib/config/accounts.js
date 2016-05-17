@@ -1,5 +1,7 @@
 Accounts.ui.config({
-    requestPermissions: {},
+    requestPermissions: {
+        facebook: ['email', 'user_about_me']
+    },
     extraSignupFields: [{
         fieldName: 'first-name',
         fieldLabel: 'First name',
