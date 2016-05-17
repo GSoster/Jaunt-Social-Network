@@ -6,3 +6,18 @@ body {
     background-color: #FFF;
     width: 780px;
 }
+
+
+/*
+client/view/home/home.html
+*/
+
+#js-myTimeline {
+    padding: 0, 5px 0 5px;
+    font-style: none;
+}
+
+#js-globalTimeline {
+    padding: 0, 5px 0 5px;
+    font-style: none;
+}
