@@ -1,3 +1,4 @@
 .meteor/local
 .meteor/meteorite
 server/lib/services.js
+services.js
