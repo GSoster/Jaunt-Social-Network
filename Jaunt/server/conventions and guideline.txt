@@ -12,3 +12,18 @@ Style guide to follow: http://guide.meteor.com/code-style.html#meteor-features
     -> Method and publication names should be camelCased, and namespaced to the module they are in: Meteor.publish('lists.public', function         listsPublic() {});
     
 #Templates: name your Blaze templates with the full path to the namespace, separated by underscores. ex.:<template name="Lists_show">
+
+#########################################
+###Directories and Files descriptions####
+#########################################
+
+/client -> contains all code that will be sent to the cliet.
+
+/models -> code related with collections
+
+/public -> content that is served 'as is', resourses, images, etc.
+
+/shared -> code shared between server and client
+
+/server -> server specific code
+
