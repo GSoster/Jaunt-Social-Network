@@ -1,7 +1,11 @@
 <template name="home">
     {{#if currentUser}}
     <section class="col-sm-12">
-        {{> post}} {{> timeline}}
+        {{> post}}
+        <!-- option to choose between timelines-->
+        <div class="row">
+            <a href="#" class="js-myTimeline">My Timeline</a> <a href="#" class="js-globalTimeline">Global Timeline</a> {{#if isMyTimeline}} {{> timeline}} {{else}} {{> timelineGlobal}} {{/if}}
+        </div>
     </section>
     {{else}}
     <div class="text-center">

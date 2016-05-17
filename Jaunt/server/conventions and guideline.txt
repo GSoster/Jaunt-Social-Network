@@ -1,0 +1,14 @@
+Style guide to follow: http://guide.meteor.com/code-style.html#meteor-features
+
+#CSS classes:
+    -> that will be used as JS selector need to have js in the beginning plus a underscore and the following letter should be lowercase: js-    myTimeline.
+    
+    
+#Collections:
+    -> Collections should be named as a plural noun. ex.:   Lists = new Mongo.Collection('Lists');
+    -> Fields in the database should be camelCased just like your JavaScript variable names. ex.: Widgets.insert({myFieldName: 'Hello!'});
+    
+#Method and publication
+    -> Method and publication names should be camelCased, and namespaced to the module they are in: Meteor.publish('lists.public', function         listsPublic() {});
+    
+#Templates: name your Blaze templates with the full path to the namespace, separated by underscores. ex.:<template name="Lists_show">
