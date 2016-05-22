@@ -22,6 +22,7 @@ Router.map(function(){
       path: "/user/:_id/follow",
       action : function(){
       var _id = this.params._id;
+      console.log("chegou no router:"+ _id);
       Friendships.follow(_id);
       this.redirect("/user/"+_id);
       }
