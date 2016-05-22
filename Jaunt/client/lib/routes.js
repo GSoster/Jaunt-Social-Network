@@ -1,7 +1,12 @@
 Router.map(function(){
    this.route('home',
    { path : "/", template : "home", layoutTemplate : "layout", data : function(){
-      return {posts :Posts.list(Meteor.userId())}; },
+     var _id = Meteor.userId();
+      return {
+        posts :Posts.list(_id),
+        //followers : Friendships.followers(_id),
+        //followings : Friendships.followings(_id),
+      }; },
     });
     this.route('user',{
       path : "/user/:_id",
@@ -14,7 +19,9 @@ Router.map(function(){
         Session.set("isFollowing", isFollowing);
         return {
           user : Meteor.users.findOne({_id : _id}),
-          posts : Posts.list(_id)
+          posts : Posts.list(_id),
+          //followers : Friendships.followers(_id),
+          //followings : Friendships.followings(_id),
         }
       }
     });

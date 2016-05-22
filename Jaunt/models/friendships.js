@@ -27,3 +27,14 @@ Friendships.isFollowing = function(friendId){
   return this.findOne({userId : this.userId,
     friendId : friendId});
 };
+
+/**
+* 
+*/
+Friendships.followings = function(userId){
+  return this.find({userId : userId}).count();
+};
+
+Friendships.followers = function(friendId){
+  return this.find({friendid : friendid}).count();
+};
