@@ -5,18 +5,19 @@ Posts = new Meteor.Collection('posts');
  * Publishes a post. AKA inserts a post in the database.
  * @param {String} message - the message to be saved
  */
-Posts.publish = function (message) {
+Posts.publish = function (message, name) {
     this.insert({
         message: message,
         date: new Date(),
-        userId: Meteor.userId()
+        userId: Meteor.userId(),
+        name : name,         
     });
 
 };
 
 /**
  * Lists all the posts from an user
- * @param {int} userId 
+ * @param {int} userId
  */
 Posts.list = function (userId) {
     return this.find({

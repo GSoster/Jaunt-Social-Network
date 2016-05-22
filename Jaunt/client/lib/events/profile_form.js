@@ -4,10 +4,10 @@ Template.profileForm.events({
         var inputs = template.findAll("input");
         Session.set("editProfile", false);
         Meteor.users.update({
-            _id: this.userId
+            _id: Meteor.user()._id
         }, {
             $set: {
-                "profile.name": inputs[0].value,
+                "profile.firstName": inputs[0].value,
                 "profile.about": inputs[1].value
             }
         });

@@ -3,7 +3,7 @@ Accounts.ui.config({
         facebook: ['email', 'user_about_me']
     },
     extraSignupFields: [{
-        fieldName: 'first-name',
+        fieldName: 'firstName',
         fieldLabel: 'First name',
         inputType: 'text',
         visible: true,
@@ -16,7 +16,7 @@ Accounts.ui.config({
             }
         }
     }, {
-        fieldName: 'last-name',
+        fieldName: 'lastName',
         fieldLabel: 'Last name',
         inputType: 'text',
         visible: true,

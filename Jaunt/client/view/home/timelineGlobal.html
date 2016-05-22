@@ -3,8 +3,9 @@
         <fieldset class="col-sm-12">
             <legend>Global Posts</legend>
             {{#each postsGlobal}}
-            <blockquote class="lead">
-                <small>{{message}}</small>
+            <blockquote class="lead postDisplayed">
+              <p>{{message}}</p>
+                <small>Author: <a href="/user/{{userId}}">{{name}}</a></small>
             </blockquote>
             {{else}}
             <p class="lead text-center">
