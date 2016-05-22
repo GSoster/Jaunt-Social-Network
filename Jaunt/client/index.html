@@ -4,11 +4,13 @@
     </title>
 </head>
 
-<body>
+<body></body>
+<template name="layout">
+
     {{> header}}
     <main class="container">
-        {{> home}}
+        {{> yield}}
     </main>
 
     {{> footer}}
-</body>
+</template>
