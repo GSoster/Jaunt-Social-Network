@@ -22,8 +22,7 @@ Router.map(function(){
       path: "/user/:_id/follow",
       action : function(){
       var _id = this.params._id;
-      console.log("chegou no router:"+ _id);
-      Friendships.follow(_id);
+      Meteor.call("followUser", _id);
       this.redirect("/user/"+_id);
       }
     });
@@ -31,7 +30,7 @@ Router.map(function(){
       path: "/user/:_id/unfollow",
       action : function(){
         var _id = this.params._id;
-        Friendships.unfollow(_id);
+        Meteor.call("unfollowUser", _id);
         this.redirect("/user/"+_id);
       }
     });
