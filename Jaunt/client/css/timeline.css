@@ -26,21 +26,21 @@
   bottom: -10px;
   width: 0;
   height: 7px;
-  background-color: #98004a;
+  /*background-color: #98004a;*/
+	background-color: #53a7ea;
   content: "";
   transition: width 0.2s;
 }
 .postDisplayed:hover{
-  box-shadow: inset 0 0 0 5px #53a7ea;
+  /*box-shadow: inset 0 0 0 5px #53a7ea;*/
   /*underline*/
   color: #98004a;
 }
 
 .postDisplayed:active{
-  background-color: yellow;
   transform: scale(1.2);
 }
 
 .postDisplayed:hover:after{
- /*width: 100%;*/
+ width: 100%;
 }
