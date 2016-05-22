@@ -6,10 +6,8 @@
     <section class="col-sm-9">
         {{> post}}
         <!-- option to choose between timelines-->
+        {{> timelineLinkOptions}}
         <div class="row">
-          <div class="text-left">
-            <a href="#" id="js-myTimeline">My Timeline</a> <a href="#" id="js-globalTimeline">Global Timeline</a>
-          </div>
             {{#if isMyTimeline}} {{> timeline}} {{else}} {{> timelineGlobal}} {{/if}}
         </div>
     </section>

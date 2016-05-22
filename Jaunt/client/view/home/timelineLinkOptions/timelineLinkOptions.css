@@ -1,0 +1,12 @@
+#js-myTimeline, #js-globalTimeline{
+  display:inline-block;
+  margin:3px;
+  padding:2px;
+  font-style: none;
+  text-decoration: none;
+}
+
+#js-myTimeline:active, #js-myTimeline:visited, #js-globalTimeline:active, #js-globalTimeline:visited{
+  transform: scale(1.2);
+  color:darkblue;
+}
