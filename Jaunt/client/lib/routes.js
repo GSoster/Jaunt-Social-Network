@@ -2,11 +2,25 @@ Router.map(function(){
    this.route('home',
    { path : "/", template : "home", layoutTemplate : "layout", data : function(){
      var _id = Meteor.userId();
+     var post = Posts.listGlobal();;
+     var timelineTitle = "Posts";
+     var noPostsMessage = "There are no Posts";
+     if (Session.get("timelineToDisplay") === "timelineGlobal"){
+       posts = Posts.listGlobal();
+       timelineTitle = "Global Posts";
+       noPostsMessage = "There are no new Global Posts to be displayed";
+     }else{
+        posts = Posts.list(_id);
+     }
+     console.log(Session.get("timelineToDisplay"));
       return {
-        posts :Posts.list(_id),
+        posts : posts,
+        timelineTitle : timelineTitle,
+        noPostsMessage : noPostsMessage,
         //followers : Friendships.followers(_id),
         //followings : Friendships.followings(_id),
-      }; },
+      };
+    }
     });
     this.route('user',{
       path : "/user/:_id",

@@ -9,13 +9,13 @@
         <!-- option to choose between timelines-->
         {{> timelineLinkOptions}}
         <div class="row">
-            {{#if isMyTimeline}} {{> timeline}} {{else}} {{> timelineGlobal}} {{/if}}
+            {{> timeline}}
         </div>
     </section>
     {{else}}
     <div class="text-center">
         <h1>Jaunt</h1>
-        <h3>Not logged in? click on "Sign In/Up"</h3> {{> timelineGlobal}}
+        <h3>Not logged in? click on "Sign In/Up"</h3> {{> timeline}}
     </div>
     {{/if}}
 </template>

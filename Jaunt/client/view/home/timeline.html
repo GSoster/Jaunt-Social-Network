@@ -1,7 +1,7 @@
 <template name="timeline">
     <div class="row">
         <fieldset class="col-sm-12">
-            <legend>Posts</legend>
+            <legend>{{timelineTitle}}</legend>
             {{#each posts}}
             <blockquote class="lead postDisplayed">
               <p>{{message}}</p>
@@ -9,7 +9,7 @@
             </blockquote>
             {{else}}
             <p class="lead text-center">
-                There are no Posts
+                {{noPostsMessage}}
             </p>
             {{/each}}
         </fieldset>
