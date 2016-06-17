@@ -5,7 +5,10 @@
             {{#each posts}}
             <blockquote class="lead postDisplayed">
               <p>{{message}}</p>
-                <small>Author: <a href="/user/{{userId}}">{{name}}</a></small>
+                <small>
+                  <span class='text-muted'>Author: <a href="/user/{{userId}}">{{name}}</a></span>
+                  <span>Date: </span>{{date}}
+                </small>
             </blockquote>
             {{else}}
             <p class="lead text-center">

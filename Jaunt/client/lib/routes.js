@@ -1,3 +1,11 @@
+//formates a Date javascript object to something that the user actually wants to see.
+function formatDate (date) {
+  var formatedDate = date.getDate() + '/' + (date.getMonth() + 1)  + '/' + date.getFullYear() + ' ';
+  formatedDate += (date.getHours().length === 1) ? '0'+date.getHours() : date.getHours();
+  formatedDate += (date.getMinutes().length === 1) ? ':0'+date.getMinutes() : ':'+date.getMinutes();  
+  return formatedDate;
+};
+
 Router.map(function(){
    this.route('home',
    { path : "/", template : "home", layoutTemplate : "layout", data : function(){
@@ -6,13 +14,13 @@ Router.map(function(){
      var timelineTitle = "Posts";
      var noPostsMessage = "There are no Posts";
      if (Session.get("timelineToDisplay") === "timelineGlobal"){
-       posts = Posts.listGlobal();
+       //the line below is used to format the date time.
+       posts = Posts.listGlobal().map(function (value) {value.date = formatDate(value.date); return value;});
        timelineTitle = "Global Posts";
        noPostsMessage = "There are no new Global Posts to be displayed";
      }else{
         posts = Posts.list(_id);
      }
-     console.log(Session.get("timelineToDisplay"));
       return {
         posts : posts,
         timelineTitle : timelineTitle,
