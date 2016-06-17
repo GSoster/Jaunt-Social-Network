@@ -34,3 +34,16 @@ Call -> call specific functions encapsuled in methods.
 /shared -> code shared between server and client
 
 /server -> server specific code
+
+#########################################
+      ###Gamification Model####
+#########################################
+#Points:
+  -> User collection stores max number of points and actual amount of points
+  -> One post from user will generate 3 points.
+  -> One comment from user will generate 1 point.
+
+#Achievements:
+  -There will be two categories of achievements: Posts, Friendship number
+    ->Posts will count how many posts the user has and give him an achievement if necessary.
+    ->Friendship number will count how many friends and five to the user an achievement if necessary.
