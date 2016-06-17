@@ -7,7 +7,7 @@ Template.profileForm.events({
         Meteor.call("profileUpdate", name, about);
         Session.set("editProfile", false);
     },
-    'click #js-profileFormCancel' : function () {
+    'click #js-profileFormCancel' : function (e, template) {
       e.preventDefault();
       Session.set("editProfile", false);
     },
