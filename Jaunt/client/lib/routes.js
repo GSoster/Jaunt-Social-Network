@@ -13,8 +13,6 @@ Router.map(function(){
      var post = Posts.listGlobal();;
      var timelineTitle = "Posts";
      var noPostsMessage = "There are no Posts";
-     console.log('QTD followers');
-     console.log(Friendships.followers(_id));
      if (Session.get("timelineToDisplay") === "timelineGlobal"){
        //the line below is used to format the date time.
        posts = Posts.listGlobal().map(function (value) {value.date = formatDate(value.date); return value;});

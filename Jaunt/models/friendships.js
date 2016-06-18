@@ -4,7 +4,7 @@ Friendships = new Meteor.Collection("friendships");
 * creates a new relation between two users.
 */
 Friendships.follow = function(friendId){
-  this.insert({userId : this.userId,
+  this.insert({userId : Meteor.user()._id,
     friendId : friendId
   });
 };
@@ -14,7 +14,7 @@ Friendships.follow = function(friendId){
 */
 Friendships.unfollow = function(friendId){
   this.remove({
-    userId : this.userId,
+    userId : Meteor.user()._id,
       friendId : friendId
   });
 };
@@ -24,7 +24,7 @@ Friendships.unfollow = function(friendId){
 returns the relationship if it exists or undefined otherwise.
 */
 Friendships.isFollowing = function(friendId){
-  return this.findOne({userId : this.userId,
+  return this.findOne({userId : Meteor.user()._id,
     friendId : friendId});
 };
 
