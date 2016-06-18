@@ -29,12 +29,12 @@ Friendships.isFollowing = function(friendId){
 };
 
 /**
-* 
+*
 */
 Friendships.followings = function(userId){
   return this.find({userId : userId}).count();
 };
 
 Friendships.followers = function(friendId){
-  return this.find({friendid : friendid}).count();
+  return this.find({friendId : friendId}).count();
 };
