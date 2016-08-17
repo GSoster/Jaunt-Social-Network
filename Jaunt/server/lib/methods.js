@@ -12,7 +12,8 @@ Meteor.methods({
   },
   profileUpdate : function(name, about){
     Meteor.users.update({
-        _id: Meteor.user()._id
+        //_id: Meteor.user()._id
+        _id: this.userId
     }, {
         $set: {
             "profile.firstName": name,
