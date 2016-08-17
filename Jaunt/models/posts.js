@@ -10,7 +10,7 @@ Posts.publish = function (message, name) {
         message: message,
         date: new Date(),
         userId: Meteor.userId(),
-        name : name,         
+        name : name,
     });
 
 };
@@ -27,6 +27,15 @@ Posts.list = function (userId) {
             date: -1
         }
     });
+};
+
+/**
+* Returns posts from an array of Ids.
+*/
+Post.listFromManyIds = function (userIds) {
+  return this.find({userId : {'$in' : userIds}},
+    {sort: {time: -1, name: 1}}
+  );
 };
 
 /**
