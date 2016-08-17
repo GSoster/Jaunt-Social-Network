@@ -1,4 +1,8 @@
-//formates a Date javascript object to something that the user actually wants to see.
+/*
+* formates a Date javascript object to something that the user actually wants to see.
+* @param {Date javascript object} date
+* @returns string
+*/
 function formatDate (date) {
   var formatedDate = date.getDate() + '/' + (date.getMonth() + 1)  + '/' + date.getFullYear() + ' ';
   formatedDate += (date.getHours().toString().length === 1) ? '0'+date.getHours() : date.getHours();
@@ -8,9 +12,10 @@ function formatDate (date) {
 
 Router.map(function(){
    this.route('home',
-   { path : "/", template : "home", layoutTemplate : "layout", data : function(){
+   { path : "/", template : "home", layoutTemplate : "layout",
+   data : function(){
      var _id = Meteor.userId();
-     var post = Posts.listGlobal();;
+     var post = Posts.listGlobal();
      var timelineTitle = "Posts";
      var noPostsMessage = "There are no Posts";
      if (Session.get("timelineToDisplay") === "timelineGlobal"){
@@ -19,7 +24,8 @@ Router.map(function(){
        timelineTitle = "Global Posts";
        noPostsMessage = "There are no new Global Posts to be displayed";
      }else{
-        posts = Posts.list(_id).map(function (value) {value.date = formatDate(value.date); return value;});;
+        var timelineIds = Friendships.timelineIds(_id);
+        posts = Posts.listFromManyIds(timelineIds).map(function (value) {value.date = formatDate(value.date); return value;});
      }
       return {
         posts : posts,

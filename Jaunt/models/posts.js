@@ -32,7 +32,7 @@ Posts.list = function (userId) {
 /**
 * Returns posts from an array of Ids.
 */
-Post.listFromManyIds = function (userIds) {
+Posts.listFromManyIds = function (userIds) {
   return this.find({userId : {'$in' : userIds}},
     {sort: {time: -1, name: 1}}
   );
