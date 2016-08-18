@@ -12,21 +12,31 @@ function formatDate (date) {
 
 Router.map(function(){
    this.route('home',
-   { path : "/", template : "home", layoutTemplate : "layout",
+   { path : "/",
+    template : "home",
+     layoutTemplate : "layout",
+     onBeforeAction : function(){
+        var _id = Meteor.userId();
+        this.subscribe("posts", _id);
+        this.subscribe("friendship", _id);
+        this.subscribe("postsFromUser", _id);
+        this.next();
+     },
    data : function(){
      var _id = Meteor.userId();
-     var post = Posts.listGlobal();
+     //var post = Posts.listGlobal();
      var timelineTitle = "Posts";
      var noPostsMessage = "There are no Posts";
      if (Session.get("timelineToDisplay") === "timelineGlobal"){
        //the line below is used to format the date time.
-       posts = Posts.listGlobal().map(function (value) {value.date = formatDate(value.date); return value;});
+       console.log("timeline correta");
+       posts = Posts.find({}).map(function (value) {value.date = formatDate(value.date); return value;});
        timelineTitle = "Global Posts";
        noPostsMessage = "There are no new Global Posts to be displayed";
-     }else{
-        var timelineIds = Friendships.timelineIds(_id);
-        posts = Posts.listFromManyIds(timelineIds).map(function (value) {value.date = formatDate(value.date); return value;});
-     }
+     }//else{
+        //var timelineIds = Friendships.timelineIds(_id);
+        //posts = Posts.listFromManyIds(timelineIds).map(function (value) {value.date = formatDate(value.date); return value;});
+     //}
       return {
         posts : posts,
         timelineTitle : timelineTitle,

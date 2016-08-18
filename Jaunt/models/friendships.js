@@ -60,3 +60,9 @@ Friendships.timelineIds = function(userId) {
   timelineIds.push(userId);
   return timelineIds;
 };
+/**
+* Returns all the connections that the user has as a follower or following.
+*/
+Friendships.followersAndFollowings = function (_id) {
+  return this.find({$or: [{userId : _id}, {friendId : _id}]});
+};
