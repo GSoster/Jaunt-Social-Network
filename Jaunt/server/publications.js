@@ -2,7 +2,11 @@
 * This file has all the publishers necessary by the client.
 */
 
-Meteor.autorun(function(){  
+Meteor.autorun(function(){
+  Meteor.publish("globalPosts", function(){
+    return Posts.listGlobal();
+  });
+
    Meteor.publish("posts", function (_id) {
      var timelineIds = Friendships.timelineIds(_id);
      return Posts.listFromManyIds(timelineIds);
