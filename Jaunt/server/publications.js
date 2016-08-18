@@ -3,7 +3,7 @@
 */
 
 Meteor.autorun(function(){
-  Meteor.publish("globalPosts", function(){
+  Meteor.publish("latestGlobalPosts", function(){
     return Posts.listGlobal();
   });
 

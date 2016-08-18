@@ -39,12 +39,13 @@ Posts.listFromManyIds = function (userIds) {
 };
 
 /**
- * Lists all the lastest posts
+ * Lists the 100 lastest posts.
+ * return {array} list of the latest 100 posts from any user.
  */
 Posts.listGlobal = function () {
     return this.find({}, {
         sort: {
             date: -1
-        }
+        }, limit : 100
     });
 };

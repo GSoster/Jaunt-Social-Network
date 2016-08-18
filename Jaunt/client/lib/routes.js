@@ -17,10 +17,9 @@ Router.map(function(){
      layoutTemplate : "layout",
      onBeforeAction : function(){
         var _id = Meteor.userId();
-        this.subscribe("posts", _id);
+        this.subscribe("posts", _id);//posts from the user and his friends (followers/followings)
         this.subscribe("friendship", _id);
-        this.subscribe("postsFromUser", _id);
-        this.subscribe("globalPosts");
+        this.subscribe("latestGlobalPosts");//latet 100 posts in the social network
         this.next();
      },
    data : function(){
@@ -28,15 +27,16 @@ Router.map(function(){
      var timelineTitle = "Posts";
      var noPostsMessage = "There are no Posts";
      if (Session.get("timelineToDisplay") === "timelineGlobal"){
-       console.log("timeline global");
        //the line below is used to format the date time. Posts.find only contains what comes from publisher
-       posts = Posts.listGlobal().map(function (value) {value.date = formatDate(value.date); return value;});
+       var postsToPrepare = Posts.find({},{sort: {date: -1}, limit : 100});
+       posts = postsToPrepare.map(function (value) {value.date = formatDate(value.date); return value;});
        timelineTitle = "Global Posts";
        noPostsMessage = "There are no new Global Posts to be displayed";
      }else{//My Timeline
-       timelineTitle = "My Timeline";
+        timelineTitle = "My Timeline";
         var timelineIds = Friendships.timelineIds(_id);
-        posts = Posts.listFromManyIds(timelineIds).map(function (value) {value.date = formatDate(value.date); return value;});
+        var postsToPrepare = Posts.find({userId : {'$in' : timelineIds}},{sort: {time: -1, name: 1}});
+        posts = postsToPrepare.map(function (value) {value.date = formatDate(value.date); return value;});
      }
       return {
         posts : posts,
@@ -51,6 +51,14 @@ Router.map(function(){
       path : "/user/:_id",
       template: "user",
       layoutTemplate : "layout",
+      onBeforeAction : function(){
+        var _id = this.params._id;
+        this.subscribe("postsFromUser", _id);
+        this.subscribe("friendship", _id);
+        this.subscribe("isFollowing", _id);
+        this.subscribe("user", _id);
+        this.next();
+      },
       data : function(){
         var _id = this.params._id;//other user id (the one which the profile our currentUser is visiting )
         var isFollowing = Friendships.isFollowing(_id);
@@ -58,7 +66,7 @@ Router.map(function(){
         Session.set("isFollowing", isFollowing);
         return {
           user : Meteor.users.findOne({_id : _id}),
-          posts : Posts.list(_id),
+          posts : Posts.find({}),
           followers : Friendships.followers(_id),
           followings : Friendships.followings(_id),
         }
