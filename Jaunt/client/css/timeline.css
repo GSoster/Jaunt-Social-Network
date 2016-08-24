@@ -38,9 +38,9 @@
 }
 
 .postDisplayed:active{
-  transform: scale(1.2);
+  /*transform: scale(1.2);*/
 }
 
 .postDisplayed:hover:after{
- width: 100%;
+ /*width: 100%;*/
 }
