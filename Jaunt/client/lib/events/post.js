@@ -9,8 +9,7 @@ Template.post.events({
         Meteor.call("publishPost",textarea.value, name);
         textarea.value = "";
         //notifications
-        jauntNotifications.postPublishedNotification();
-        jauntNotifications.friendAdded('guilherme');
+        jauntNotifications.postPublishedNotification();        
         return false;
     }
 });

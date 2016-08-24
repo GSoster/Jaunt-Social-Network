@@ -10,5 +10,5 @@ jauntNotifications.postPublishedNotification = function(){
 
 
 jauntNotifications.friendAdded = function(followingsName){
-  sAlert.info('You are now following' + followingsName + ' !!', {position: 'bottom-right', timeout: 'none'});
+  sAlert.info('You are now following ' + followingsName + ' !!', {position: 'bottom-right', timeout: 'none'});
 };
