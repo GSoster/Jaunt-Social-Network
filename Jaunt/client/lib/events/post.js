@@ -6,6 +6,8 @@ Template.post.events({
         if (Meteor.user().profile.lastName) {
           name += ' ' + Meteor.user().profile.lastName;
         }
+        //notifications
+        sAlert.info('Post published!!', {position: 'bottom-right', timeout: 'none'});
         Meteor.call("publishPost",textarea.value, name);
         textarea.value = "";
         return false;
