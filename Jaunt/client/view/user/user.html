@@ -7,9 +7,21 @@
     {{/with}}
     {{> friendship}}
     {{> followButton}}
-     {{> timeline}}
+    Número de Posts: {{postsCount}}
+    {{> userProfileAchievements}}
+    {{> timeline}}
   </div>
   {{else}}
   <h1>User not identified.</h1>
   <a href="{{pathFor 'home'}}">Homepage</a> {{/if}}
+</template>
+
+<template name="userProfileAchievements">
+  <div class="well">
+    <h2>Achievements Unlocked</h2>
+    {{#each achievementsUnlocked}}
+      <img src="{{src}}" alt="{{alt}}" width="50px" height="50px">
+      <img src="{{src}}" alt="achievement" >
+    {{/each}}
+  </div>
 </template>

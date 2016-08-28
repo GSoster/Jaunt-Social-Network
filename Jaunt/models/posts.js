@@ -49,3 +49,8 @@ Posts.listGlobal = function () {
         }, limit : 100
     });
 };
+
+
+Posts.postsCountFromUser = function (userId){
+  return this.find({userId : userId}).count();
+};
