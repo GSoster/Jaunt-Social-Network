@@ -3,12 +3,18 @@
   <div class="text-center">
     {{#with user.profile}}
     <h1>{{firstName}}</h1>
-    <p>{{about}}</p>
     {{/with}}
-    {{> friendship}}
-    {{> followButton}}
-    Número de Posts: {{postsCount}}
-    {{> userProfileAchievements}}
+    <div class="row">
+      <div class="col-md-6">
+        <p>{{user.profile.about}}</p>
+        {{> friendship}}
+        {{> followButton}}
+        Posts published: {{postsCount}}
+      </div>
+      <div class="col-md-6">
+        {{> userProfileAchievements}}
+      </div>
+    </div><!-- closes row -->
     {{> timeline}}
   </div>
   {{else}}
@@ -20,8 +26,7 @@
   <div class="well">
     <h2>Achievements Unlocked</h2>
     {{#each achievementsUnlocked}}
-      <img src="{{src}}" alt="{{alt}}" width="50px" height="50px">
-      <img src="{{src}}" alt="achievement" >
+      <img src="{{src}}" alt="{{alt}}" title="{{alt}}" width="50px" height="50px">
     {{/each}}
   </div>
 </template>

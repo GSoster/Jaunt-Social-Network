@@ -24,4 +24,12 @@ Meteor.methods({
   publishPost : function(message, name){
     Posts.publish(message, name);
   },
+  addAchievement : function(achievement){
+    var achievements = Meteor.users.find({_id : this.userId}).achievements || [];
+    achievements.push(achievement);
+    Meteor.users.update({_id:idSelector}, {$set:{
+      achievements : achievements
+    }});
+
+  },
 });

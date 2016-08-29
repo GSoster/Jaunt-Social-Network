@@ -7,9 +7,15 @@ Template.post.events({
           name += ' ' + Meteor.user().profile.lastName;
         }
         Meteor.call("publishPost",textarea.value, name);
+        var achievement = {
+          achievedOn : new Date(), title : "First Post!",
+          description: "Congratulations for your first post!",
+          image: "/resources/achievementsImages/achievement_firstPost.png",
+        };
+        Meteor.call("addAchievement", achievement);
         textarea.value = "";
         //notifications
-        jauntNotifications.postPublishedNotification();        
+        jauntNotifications.postPublishedNotification();
         return false;
     }
 });
