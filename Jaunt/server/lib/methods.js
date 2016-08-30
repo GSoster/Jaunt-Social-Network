@@ -25,15 +25,20 @@ Meteor.methods({
     Posts.publish(message, name);
   },
   addAchievement : function(achievement){
-    console.log(achievement);
     var achievements = Meteor.users.find({_id : this.userId}).achievements || [];
-    console.log("user achievements: ");
-    console.log(achievements);
     achievements.push(achievement);
-    console.log("now with achieve");
-    console.log(achievements);
     Meteor.users.update({_id: this.userId}, {$set:{
       achievements : achievements
     }});
   },
+
+  increasePontuation : function (pointsToIncrease, type){
+    var pointsToUpdate = Meteor.users.find({_id : this.userId}).points || {"post" : 0, "comment" : 0};
+    console.log("points tinha:");
+    console.log(pointsToUpdate);
+    pointsToUpdate[type] += pointsToIncrease;
+    Meteor.users.update({_id: this.userId}, {$set:{
+      points : pointsToUpdate
+    }});
+  }
 });
