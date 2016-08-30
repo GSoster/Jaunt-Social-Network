@@ -25,11 +25,15 @@ Meteor.methods({
     Posts.publish(message, name);
   },
   addAchievement : function(achievement){
+    console.log(achievement);
     var achievements = Meteor.users.find({_id : this.userId}).achievements || [];
+    console.log("user achievements: ");
+    console.log(achievements);
     achievements.push(achievement);
-    Meteor.users.update({_id:idSelector}, {$set:{
+    console.log("now with achieve");
+    console.log(achievements);
+    Meteor.users.update({_id: this.userId}, {$set:{
       achievements : achievements
     }});
-
   },
 });
