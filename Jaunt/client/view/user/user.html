@@ -27,8 +27,9 @@
 <template name="userProfileAchievements">
   <div class="well">
     <h2>Achievements Unlocked</h2>
+    <p>Total number of achievements: {{achievementsCount}}</p>
     {{#each achievementsUnlocked}}
-      <img src="{{src}}" alt="{{alt}}" title="{{alt}}" width="50px" height="50px">
+      <img src="{{image}}" alt="{{title}}" title="{{title}}" width="50px" height="50px">
     {{/each}}
   </div>
 </template>

@@ -25,8 +25,6 @@ Meteor.methods({
     Posts.publish(message, name);
   },
   addAchievement : function(achievement, userId){
-    console.log("Post recebeu user id: " + userId + " achievement: ");
-    console.log(achievement);
     Achievements.addAchievement(achievement, userId);
   },
 

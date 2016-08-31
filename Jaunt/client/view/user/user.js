@@ -12,6 +12,9 @@ Template.user.helpers({
 
 Template.userProfileAchievements.helpers({
   achievementsUnlocked : function(){
-    return [{src: '/resources/achievementsImages/achievement_firstPost.png', alt : 1},{src: '/resources/achievementsImages/achievement_firstPost.png', alt : 2}];
+    return Achievements.listAchievementsFromUser(Meteor.userId());
   },
+  achievementsCount : function(){
+    return Achievements.achievementsCountFromUser(Meteor.userId());
+  }
 });

@@ -27,4 +27,9 @@ Meteor.autorun(function(){
    Meteor.publish("friendship", function(_id){
       return Friendships.followersAndFollowings(_id);
    });
+
+   Meteor.publish("achievements", function(_id){
+      return Achievements.listAchievementsFromUser(_id);
+   });
+
 });

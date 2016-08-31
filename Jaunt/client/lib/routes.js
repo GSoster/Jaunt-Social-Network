@@ -57,6 +57,7 @@ Router.map(function(){
         this.subscribe("friendship", _id);
         this.subscribe("isFollowing", _id);
         this.subscribe("user", _id);
+        this.subscribe("achievements", _id);
         this.next();
       },
       data : function(){

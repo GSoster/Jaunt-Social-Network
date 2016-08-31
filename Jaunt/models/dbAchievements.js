@@ -6,8 +6,19 @@ Achievements = new Meteor.Collection('achievements');
  */
 Achievements.addAchievement = function (achievement, userId) {
     this.insert({
-        userId: userId,
-        date: new Date(),
-        achievement : achievement,
+      userId: userId,
+      date: new Date(),
+      title: achievement.title,
+      description : achievement.description,
+      image: achievement.image
     });
+};
+
+
+Achievements.listAchievementsFromUser = function(userId){
+  return this.find({userId : userId});
+};
+
+Achievements.achievementsCountFromUser = function (userId){
+    return this.find({userId : userId}).count();
 };
