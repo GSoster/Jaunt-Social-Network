@@ -2,21 +2,19 @@
   {{#if user}}
   <div class="text-center">
     {{#with user.profile}}
-    <h1>{{firstName}}</h1>
-    {{/with}}
+    <h1>{{firstName}}</h1> {{/with}}
     <div class="row">
       <div class="col-md-6">
         <p>{{user.profile.about}}</p>
-        {{> friendship}}
-        {{> followButton}}
-        Posts published: {{postsCount}}
+        {{> friendship}} {{> followButton}} Posts published: {{postsCount}}
 
-
+        Total Points: {{totalPoints}}
       </div>
       <div class="col-md-6">
         {{> userProfileAchievements}}
       </div>
-    </div><!-- closes row -->
+    </div>
+    <!-- closes row -->
     {{> timeline}}
   </div>
   {{else}}
@@ -25,11 +23,14 @@
 </template>
 
 <template name="userProfileAchievements">
-  <div class="well">
-    <h2>Achievements Unlocked</h2>
-    <p>Total number of achievements: {{achievementsCount}}</p>
-    {{#each achievementsUnlocked}}
-      <img src="{{image}}" alt="{{title}}" title="{{title}}" width="50px" height="50px">
-    {{/each}}
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="well">
+        <h2>Achievements Unlocked</h2>
+        <p>Total number of achievements: {{achievementsCount}}</p>
+        {{#each achievementsUnlocked}}
+        <img src="{{image}}" alt="{{title}}" title="{{title}}" width="50px" height="50px"> {{/each}}
+      </div>
+    </div>
   </div>
 </template>

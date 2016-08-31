@@ -2,11 +2,12 @@ Template.user.helpers({
   postsCount : function(){
     return Posts.postsCountFromUser(Meteor.userId());
   },
-  /*points : function(){
-    var points =  Meteor.users.find({_id : Meteor.userId()}).points;
-    console.log(points);
-    return points;
-  }*/
+  totalPoints : function(){
+    var points =  Points.listPointsFromUser(Meteor.userId());
+    var totalPoints = 0;
+    points.map(function(x){totalPoints += x.points;});
+    return totalPoints;
+  }
 });
 
 

@@ -20,6 +20,7 @@ Router.map(function(){
         this.subscribe("posts", _id);//posts from the user and his friends (followers/followings)
         this.subscribe("friendship", _id);
         this.subscribe("latestGlobalPosts");//latet 100 posts in the social network
+        this.subscribe("points", _id);
         this.next();
      },
    data : function(){
@@ -58,6 +59,7 @@ Router.map(function(){
         this.subscribe("isFollowing", _id);
         this.subscribe("user", _id);
         this.subscribe("achievements", _id);
+        this.subscribe("points", _id);
         this.next();
       },
       data : function(){

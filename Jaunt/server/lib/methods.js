@@ -27,14 +27,7 @@ Meteor.methods({
   addAchievement : function(achievement, userId){
     Achievements.addAchievement(achievement, userId);
   },
-
-  increasePontuation : function (pointsToIncrease, type){
-    var pointsToUpdate = Meteor.users.find({_id : this.userId}).points || {"post" : 0, "comment" : 0};
-    console.log("points tinha:");
-    console.log(pointsToUpdate);
-    pointsToUpdate[type] += pointsToIncrease;
-    Meteor.users.update({_id: this.userId}, {$set:{
-      points : pointsToUpdate
-    }});
-  }
+  increasePontuation : function (pointsToIncrease, type, userId){
+    Points.increasePontuation(pointsToIncrease, type, userId);
+  },
 });

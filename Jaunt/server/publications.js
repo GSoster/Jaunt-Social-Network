@@ -32,4 +32,8 @@ Meteor.autorun(function(){
       return Achievements.listAchievementsFromUser(_id);
    });
 
+   Meteor.publish("points", function(_id){
+      return Points.listPointsFromUser(_id);
+   });
+
 });

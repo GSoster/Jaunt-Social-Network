@@ -13,7 +13,7 @@ Template.post.events({
           image: "/resources/achievementsImages/achievement_firstPost.png",
         };
         Meteor.call("addAchievement", achievement, Meteor.userId());
-        //Meteor.call("increasePontuation", 5, 'post');
+        Meteor.call("increasePontuation", 5, 'post', Meteor.userId());
         textarea.value = "";
         //notifications
         jauntNotifications.postPublishedNotification();
