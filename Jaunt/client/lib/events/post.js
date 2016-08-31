@@ -8,12 +8,12 @@ Template.post.events({
         }
         Meteor.call("publishPost",textarea.value, name);
         var achievement = {
-          achievedOn : new Date(), title : "First Post!",
+          title : "First Post!",
           description: "Congratulations for your first post!",
           image: "/resources/achievementsImages/achievement_firstPost.png",
         };
-        Meteor.call("addAchievement", achievement);
-        Meteor.call("increasePontuation", 5, 'post');
+        Meteor.call("addAchievement", achievement, Meteor.userId());
+        //Meteor.call("increasePontuation", 5, 'post');
         textarea.value = "";
         //notifications
         jauntNotifications.postPublishedNotification();

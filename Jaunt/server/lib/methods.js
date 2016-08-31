@@ -24,12 +24,10 @@ Meteor.methods({
   publishPost : function(message, name){
     Posts.publish(message, name);
   },
-  addAchievement : function(achievement){
-    var achievements = Meteor.users.find({_id : this.userId}).achievements || [];
-    achievements.push(achievement);
-    Meteor.users.update({_id: this.userId}, {$set:{
-      achievements : achievements
-    }});
+  addAchievement : function(achievement, userId){
+    console.log("Post recebeu user id: " + userId + " achievement: ");
+    console.log(achievement);
+    Achievements.addAchievement(achievement, userId);
   },
 
   increasePontuation : function (pointsToIncrease, type){
