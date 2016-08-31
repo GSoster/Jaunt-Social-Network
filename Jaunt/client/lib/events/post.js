@@ -12,11 +12,15 @@ Template.post.events({
           description: "Congratulations for your first post!",
           image: "/resources/achievementsImages/achievement_firstPost.png",
         };
-        Meteor.call("addAchievement", achievement, Meteor.userId());
+        //give points to user after a new post:
         Meteor.call("increasePontuation", 5, 'post', Meteor.userId());
+        //verifies if it is necessary to unlock a new achievement
+        if(jauntAchievementsRules.verifyPostShouldUnlockAchievement(Meteor.userId())){          
+          Meteor.call("addAchievement", achievement, Meteor.userId());
+          jauntNotifications.achievementPostPublishedNotification();
+        }
         textarea.value = "";
         //notifications
-        jauntNotifications.postPublishedNotification();
         return false;
     }
 });
