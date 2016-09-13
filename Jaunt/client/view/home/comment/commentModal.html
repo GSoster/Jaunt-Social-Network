@@ -1,0 +1,23 @@
+<template name="commentModal">
+  <div class="modal fade" id="commentModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+
+        <div class="modal-header text-center">
+          <h4 class="modal-title">Comment</h4>
+        </div>
+
+        <div class="modal-body">
+          <label for="comment"><small>{{userName}} we'd love to hear you</small></label>
+          <textarea id="userComment" class="form-control"></textarea>          
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="js-commentModal-save">Save</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

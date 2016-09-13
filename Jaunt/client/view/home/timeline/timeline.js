@@ -1,7 +1,8 @@
 Template.timeline.events({
   "click #js-commentPost": function(event, template){
      event.preventDefault();
-     alert("Clicou em comentar!");
-     console.log("clicou em comentar!");
+     var postId = this._id;
+     console.log("post: " + postId);
+     $('#commentModal').modal('show');
   }
 });
