@@ -16,8 +16,10 @@ Template.commentModal.events({
       text: commentText,
       postId: postId
     };
-    console.log(comment);
+    Meteor.call('commentOnPost', comment, postId);
     $('#userComment').val('');//cleans the modal textbox
+    $('#commentModal').modal('hide');//dimiss modal
+    jauntNotifications.defaultCommentPublised();//calls notification    
     return false;
   },
 

@@ -30,6 +30,17 @@ Posts.list = function (userId) {
 };
 
 /**
+* Adds a comment to a post
+*/
+Posts.commentOnPost = function(comment, postId){
+  this.update(
+    { _id: postId },
+    { $push: { comments: comment } }
+  );
+};
+
+
+/**
 * Returns posts from an array of Ids.
 */
 Posts.listFromManyIds = function (userIds) {

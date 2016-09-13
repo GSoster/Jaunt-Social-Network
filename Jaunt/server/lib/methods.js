@@ -24,6 +24,10 @@ Meteor.methods({
   publishPost : function(message, name){
     Posts.publish(message, name);
   },
+  commentOnPost : function(comment, postId){
+    Posts.commentOnPost(comment, postId);
+  }
+  ,
   addAchievement : function(achievement, userId){
     Achievements.addAchievement(achievement, userId);
   },
