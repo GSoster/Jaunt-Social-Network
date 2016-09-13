@@ -8,9 +8,13 @@ Achievements.addAchievement = function (achievement, userId) {
     this.insert({
       userId: userId,
       date: new Date(),
+      achievementId: achievement.achievementId,
       title: achievement.title,
+      type: achievement.type,
       description : achievement.description,
-      image: achievement.image
+      image: achievement.image,
+      conditionValue: achievement.conditionValue,
+      achieved: true
     });
 };
 

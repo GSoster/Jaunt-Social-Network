@@ -75,24 +75,20 @@ jauntAchievementsRules.verifyPostShouldUnlockAchievement = function(userId) {
 
 
 
+/**
+* Verifies if the number of posts from an user is enough to unlock an achievement.
+* if it is, then checks if it wasn't achieved before. Then achieves it.
+*/
 jauntAchievementsRules.checkAndUnlockPostAchievementByCondition = function(userId) {
-    console.log("Entrando em: checkAndUnlockPostAchievementByCondition");
     var postsCount = Posts.postsCountFromUser(userId);
-    var shouldAchieve = false;
-    console.log("Quantidade de posts do user: " + postsCount);
     for (var i = 0; i < jauntAchievementsRules.postAchievements.length; i++) {
-        var condition = jauntAchievementsRules.postAchievements[i].conditionValue;
-        console.log("Conditio: " + condition);
-        if (condition === postsCount) {
-            //checa se já foi achieved!
-            var exists = Achievements.checkAchievementByCondition(userId, condition);
-            if (!exists.hasOwnProperty('achieved') || !exists.achieved) {
-                console.log("VAMOS LIBERAR!");
-                //shouldAchieve = true;
-                Meteor.call("addAchievement", jauntAchievementsRules.postAchievements[i], Meteor.userId());
-                jauntNotifications.achievementPostPublishedNotification(condition + ' Post published!');
+        var achievement = jauntAchievementsRules.postAchievements[i];
+        if (achievement.conditionValue === postsCount) {
+            var exists = Achievements.checkAchievementByCondition(userId, achievement.conditionValue);
+            if (!exists.hasOwnProperty('achieved') || !exists.achieved) {                
+                Meteor.call("addAchievement", achievement, Meteor.userId());
+                jauntNotifications.achievementPostPublishedNotification(achievement.conditionValue + ' Post published!');
             }
-
         }
     }
 };

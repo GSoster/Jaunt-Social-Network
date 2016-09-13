@@ -8,13 +8,9 @@ Template.post.events({
         }
         Meteor.call("publishPost", textarea.value, name);
         Meteor.call("increasePontuation", 5, 'post', Meteor.userId());//give points to user after a new post
-
-        //if(jauntAchievementsRules.verifyPostShouldUnlockAchievement(Meteor.userId())){
+        //the method above does all the trick ;)
         jauntAchievementsRules.checkAndUnlockPostAchievementByCondition(Meteor.userId());
-        //  jauntNotifications.achievementPostPublishedNotification('First Post published!');
-        //}
         textarea.value = "";
-        //notifications
         return false;
     }
 });
