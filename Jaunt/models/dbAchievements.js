@@ -22,3 +22,11 @@ Achievements.listAchievementsFromUser = function(userId){
 Achievements.achievementsCountFromUser = function (userId){
     return this.find({userId : userId}).count();
 };
+
+/**
+* returns if an achievement exists for a specific user and condition.
+*/
+Achievements.checkAchievementByCondition = function (userId, condition){
+  var result = this.find({userId : userId, "conditionValue": condition});
+  return result;
+};

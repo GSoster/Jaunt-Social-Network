@@ -4,8 +4,8 @@ jauntNotifications = {};
 //docs here: http://s-alert.meteorapp.com/#
 
 //new post published notification
-jauntNotifications.achievementPostPublishedNotification = function(){
-  sAlert.success('Post published!! <img width="40px" height="40px" src="resources/achievementsImages/achievement_firstPost.png" alt="foi">', {position: 'bottom-right', timeout: 'none', html: true});
+jauntNotifications.achievementPostPublishedNotification = function(message){
+  sAlert.success(message + '<img width="40px" height="40px" src="resources/achievementsImages/achievement_firstPost.png" alt="foi">', {position: 'bottom-right', timeout: 'none', html: true});
 };
 
 
