@@ -2,9 +2,9 @@
     <div class="row">
         <fieldset class="col-sm-12">
             <legend>{{timelineTitle}}</legend>
+            {{> commentModal}}
             {{#each posts}}
             <blockquote class="lead postDisplayed"  tabindex="0" id="{{_id}}">
-              {{> commentModal}}
               <p>{{message}}</p>
                 <small>
                   <span class='text-muted'>Author: <a href="/user/{{userId}}">{{name}}</a></span>
