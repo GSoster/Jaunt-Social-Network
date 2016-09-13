@@ -8,10 +8,16 @@ Template.commentModal.helpers({
 Template.commentModal.events({
   "click #js-commentModal-save": function(event, template){
     event.preventDefault();
-    console.log($('#userComment').val());
-    console.log(this);
-    var parentElementId = $(this).parent().attr('id');
-    console.log(parentElementId);
+    var commentText = $('#userComment').val();
+    var postId = Session.get('postBeingCommented');
+    var comment = {
+      userId: Meteor.userId(),
+      date: new Date(),
+      text: commentText,
+      postId: postId
+    };
+    console.log(comment);
+    $('#userComment').val('');//cleans the modal textbox
     return false;
   },
 
