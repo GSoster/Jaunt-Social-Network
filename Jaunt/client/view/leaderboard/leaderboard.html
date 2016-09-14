@@ -1,0 +1,21 @@
+<template name="leaderboard">
+  {{#if user}}
+  <div class="text-center">
+    {{#with user.profile}}
+    <h1>{{firstName}}</h1>
+    {{/with}}
+    <div class="row">
+      <div class="col-xs-12">
+        {{> leaderboardFriend}}
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <h1>User not identified.</h1>
+  <a href="{{pathFor 'home'}}">Homepage</a> {{/if}}
+</template>
+
+
+<template name="leaderboardFriend">
+  <!-- shows information of each -->
+</template>

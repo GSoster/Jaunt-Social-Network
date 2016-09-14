@@ -15,5 +15,9 @@ jauntNotifications.friendAdded = function(followingsName){
 
 
 jauntNotifications.defaultCommentPublised = function(){
-  sAlert.info('Your comment was published.', {position: 'bottom-right', timeout: 'none', html: true});
+  sAlert.info('Your <strong>comment</strong> was published.', {position: 'bottom-right', timeout: 'none', html: true});
+};
+
+jauntNotifications.defaultPostPublised = function(){
+  sAlert.info('Your <strong>post</strong> was published.', {position: 'bottom-right', timeout: 'none', html: true});
 };

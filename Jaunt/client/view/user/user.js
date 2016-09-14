@@ -7,7 +7,27 @@ Template.user.helpers({
     var totalPoints = 0;
     points.map(function(x){totalPoints += x.points;});
     return totalPoints;
-  }
+  },
+  commentPoints : function(){
+    var points =  Points.listPointsFromUser(Meteor.userId());
+    commentPoints = 0;
+    points.map(function(p){
+      if(p.type === "comment"){
+          commentPoints+= p.points;
+      }
+    });
+    return commentPoints;
+  },
+  postPoints : function(){
+    var points =  Points.listPointsFromUser(Meteor.userId());
+    postPoints = 0;
+    points.map(function(p){
+      if(p.type === "post"){
+          postPoints+= p.points;
+      }
+    });
+    return postPoints;
+  },
 });
 
 

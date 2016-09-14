@@ -6,9 +6,13 @@
     <div class="row">
       <div class="col-md-6">
         <p>{{user.profile.about}}</p>
-        {{> friendship}} {{> followButton}} Posts published: {{postsCount}}
-
-        Total Points: {{totalPoints}}
+        {{> friendship}} {{> followButton}}
+        <br>
+         Posts published: {{postsCount}}
+         <br>
+         Total Points: {{totalPoints}}<br>
+         Points from comments: {{commentPoints}}<br>
+         Points from Posts: {{postPoints}}
       </div>
       <div class="col-md-6">
         {{> userProfileAchievements}}

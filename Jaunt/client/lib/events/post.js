@@ -10,6 +10,7 @@ Template.post.events({
         Meteor.call("increasePontuation", 5, 'post', Meteor.userId());//give points to user after a new post
         //the method above does all the trick ;)
         jauntAchievementsRules.checkAndUnlockPostAchievementByCondition(Meteor.userId());
+        jauntNotifications.defaultPostPublised();
         textarea.value = "";
         return false;
     }
