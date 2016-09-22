@@ -8,6 +8,11 @@ jauntNotifications.achievementPostPublishedNotification = function(message){
   sAlert.success(message + '<img width="40px" height="40px" src="resources/achievementsImages/achievement_firstPost.png" alt="foi">', {position: 'bottom-right', timeout: 'none', html: true});
 };
 
+jauntNotifications.achievementCommentPublishedNotification = function(message){
+  sAlert.success(message + '<img width="40px" height="40px" src="resources/achievementsImages/achievement_firstPost.png" alt="foi">', {position: 'bottom-right', timeout: 'none', html: true});
+};
+
+
 
 jauntNotifications.friendAdded = function(followingsName){
   sAlert.info('You are now following ' + followingsName + ' !!', {position: 'bottom-right', timeout: 'none'});
