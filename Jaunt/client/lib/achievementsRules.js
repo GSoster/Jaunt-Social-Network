@@ -147,6 +147,9 @@ jauntAchievementsRules.checkAndUnlockPostAchievementByCondition = function(userI
 
 jauntAchievementsRules.checkAndUnlockCommentAchievementByCondition = function(userId) {
     var commentsCount = 1; //need to refactor
+    console.log("total:");
+    //console.log(Posts.commentsCountFromUser(userId));
+    console.log('t');
     for (var i = 0; i < jauntAchievementsRules.commentAchievements.length; i++) {
         var achievement = jauntAchievementsRules.commentAchievements[i];
         if (achievement.conditionValue === commentsCount) {

@@ -61,7 +61,24 @@ Posts.listGlobal = function () {
     });
 };
 
-
-Posts.postsCountFromUser = function (userId){
+/**
+* Gets the number of posts made by the user.
+*/
+Posts.postsCountFromUser = function (userId) {
   return this.find({userId : userId}).count();
+};
+
+/**
+* Lists all the comments in posts from an user
+*/
+Posts.commentsFromUser = function (userId) {
+  return this.find({'comments': {$exists: true}, 'userId': userId});
+};
+
+/**
+* Gets the number of comments made in comments by the user.
+* right now it is wrong!! it is returning the number of posts, not comments!!
+*/
+Posts.commentsCountFromUser = function (userId) {
+  return this.find({'comments': {$exists: true}, 'userId': userId}).count();
 };
