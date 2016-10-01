@@ -10,5 +10,8 @@ Template.home.helpers({
     },
     isMyTimeline: function () {
         return Session.get("timelineToDisplay") === "myTimeline";
+    },
+    userId : function(){
+      return Meteor.userId();
     }
 });

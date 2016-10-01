@@ -91,4 +91,29 @@ Router.map(function(){
         this.redirect("/user/"+_id);
       }
     });
+
+
+    this.route('leaderboard',{
+      path : "/leaderboard/:_id",
+      template: "leaderboard",
+      layoutTemplate : "layout",
+      onBeforeAction : function(){
+        var _id = this.params._id;
+        this.subscribe("postsFromUser", _id);
+        this.subscribe("friendship", _id);
+        this.subscribe("isFollowing", _id);
+        this.subscribe("user", _id);
+        this.subscribe("achievements", _id);
+        this.subscribe("points", _id);
+        this.next();
+      },
+      data : function(){
+        var _id = this.params._id;//other user id (the one which the profile our currentUser is visiting )
+        return {
+          user : Meteor.users.findOne({_id : _id})
+        }
+      }
+    });
+
+
  });
