@@ -16,12 +16,14 @@ function uniquefyArray(arrayToCheck) {
 Template.leaderboard.helpers({
   friends : function(){
     var ids = Friendships.followersAndFollowings(Meteor.userId());
-    var friendsIds = [];
+    var friendsIds = new Array();
     ids.map(function(friend){//maps if the user has being added by the friend or added the friend.
       friendsIds.push( (friend.userId === Meteor.userId()) ? friend.friendId : friend.userId);
     });
     uniqueFriendsIds = uniquefyArray(friendsIds);
+    console.log(uniqueFriendsIds);
     var friends = Meteor.users.find( {_id: { $in: uniqueFriendsIds } } );
+    console.log('friends');
     console.log(friends);
     friends.map(function(f){console.log(f);});
     return friends;
