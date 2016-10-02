@@ -5,9 +5,9 @@
     <h1>{{firstName}}</h1>
     {{/with}}
     <div class="row">
-      <div class="col-xs-12">
+      {{#each friends}}
         {{> leaderboardFriend}}
-      </div>
+      {{/each}}
     </div>
   </div>
   {{else}}
@@ -17,5 +17,8 @@
 
 
 <template name="leaderboardFriend">
-  <!-- shows information of each -->
+  <div class="col-xs-12 col-sm-6">
+    <!-- shows information of each -->
+    <div style='border:solid 1px red;'>friendo:{{friends.profile.firstName}}</div>
+  </div>
 </template>
