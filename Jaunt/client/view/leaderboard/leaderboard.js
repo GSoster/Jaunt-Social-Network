@@ -12,21 +12,9 @@ function uniquefyArray(arrayToCheck) {
     return unique;
 }
 
-Template.leaderboard.helpers({
-  /*friends : function(){
-    var ids = Friendships.followersAndFollowings(Meteor.userId());
-    var friendsIds = new Array();
-    ids.map(function(friend){//maps if the user has being added by the friend or added the friend.
-      friendsIds.push( (friend.userId === Meteor.userId()) ? friend.friendId : friend.userId);
-    });
-    uniqueFriendsIds = uniquefyArray(friendsIds);
-    console.log(typeof Meteor.users);
-    var x = Meteor.users.find({});
-    console.log(x);
-    return [{'_id': 'gui'}, {'_id' :'gui2'}];
+/* ## ATTENTION ##
+ * the helpers of leaderboard.html are hosted in the route file
+ */
+Template.leaderboard.helpers({});
 
-  },*/
-});
-
-Template.leaderboard.events({
-});
+Template.leaderboard.events({});

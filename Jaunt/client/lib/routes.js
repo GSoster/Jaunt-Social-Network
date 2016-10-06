@@ -20,7 +20,6 @@ function uniquefyArray(arrayToCheck) {
         var current = arrayToCheck[i];
         if (unique.indexOf(current) < 0) {
           unique.push(current);
-          console.log(current + " foi adicionado ao unico");
         }
     }
     return unique;
@@ -121,7 +120,7 @@ Router.map(function(){
         this.subscribe("user", _id);
         this.subscribe("achievements", _id);
         this.subscribe("points", _id);
-        this.subscribe("friends");
+        //this.subscribe("friends");//it is not necessary anymore. remove in next version
         this.subscribe("users");
         this.next();
       },
@@ -138,7 +137,7 @@ Router.map(function(){
         var friends = Meteor.users.find({_id: { $in: uniqueFriendsIds } } );
         return {
           user: Meteor.users.findOne({_id : _id}),
-          title: "titulo dessa porra aqui",
+          title: "Your friend's stats",
           friends:friends,
         }
       }

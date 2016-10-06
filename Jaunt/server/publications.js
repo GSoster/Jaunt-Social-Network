@@ -46,9 +46,16 @@ Meteor.autorun(function(){
    Meteor.publish("points", function(_id){
       return Points.listPointsFromUser(_id);
    });
+
+   Meteor.publish("users", function(_id){
+     return Meteor.users.find({});
+   });
+
    /**
+   * ## It is not necessary anymore, remove in a next version ##
    * uses the user Id to discover users related to him and
    * sends all their information back.
+   * @deprecated
    */
    Meteor.publish("friends", function(_id){
      var ids = Friendships.followersAndFollowings(_id);
@@ -61,7 +68,5 @@ Meteor.autorun(function(){
      return usersToReturn;
    });
 
-   Meteor.publish("users", function(_id){
-     return Meteor.users.find({});
-   });
+
 });

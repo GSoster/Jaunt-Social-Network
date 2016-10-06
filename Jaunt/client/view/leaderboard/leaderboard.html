@@ -20,6 +20,8 @@
 <template name="leaderboardFriend">
   <div class="col-xs-12 col-sm-6">
     <!-- shows information of each -->
-    <div style='border:solid 1px red;'>friendo:{{profile.firstName}} -</div>
+    <div style='border:solid 1px red;'>
+       <a href="/user/{{_id}}">{{profile.firstName}}</a>
+    </div>
   </div>
 </template>

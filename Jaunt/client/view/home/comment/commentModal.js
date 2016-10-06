@@ -1,7 +1,9 @@
 
 Template.commentModal.helpers({
   userName : function(){
-    return Meteor.user().profile.firstName;
+    if(Meteor.user()){
+      return Meteor.user().profile.firstName;
+    }
   },
 });
 
