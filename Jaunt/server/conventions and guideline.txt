@@ -3,6 +3,11 @@ Style guide to follow: http://guide.meteor.com/code-style.html#meteor-features
 text-editor configurations:
 https://atom.io/packages/meteor-api
 
+#ROUTES
+It is important to note that pages that work with routes should get their vars (helpers)
+from the router and not from a helper.js
+
+
 Methods and Calls
 Methods -> functions in the server that will be called on the client.
 Call -> call specific functions encapsuled in methods.

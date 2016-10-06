@@ -10,6 +10,22 @@ function formatDate (date) {
   return formatedDate;
 };
 
+/**
+* @param array
+* returns an array with unique elements.
+*/
+function uniquefyArray(arrayToCheck) {
+    var unique = [];
+    for (var i = 0; i < arrayToCheck.length; i++) {
+        var current = arrayToCheck[i];
+        if (unique.indexOf(current) < 0) {
+          unique.push(current);
+          console.log(current + " foi adicionado ao unico");
+        }
+    }
+    return unique;
+};
+
 Router.map(function(){
    this.route('home',
    { path : "/",
@@ -105,12 +121,25 @@ Router.map(function(){
         this.subscribe("user", _id);
         this.subscribe("achievements", _id);
         this.subscribe("points", _id);
+        this.subscribe("friends");
+        this.subscribe("users");
         this.next();
       },
       data : function(){
-        var _id = this.params._id;//other user id (the one which the profile our currentUser is visiting )
+        var _id = this.params._id;//in this case it is the current user's id
+        //fetching the friends information
+        var ids = Friendships.followersAndFollowings(_id);
+        var friendsIds = new Array();
+        ids.map(function(friend){//maps if the user has being added by the friend or added the friend.
+          friendsIds.push( (friend.userId === Meteor.userId()) ? friend.friendId : friend.userId);
+        });
+        uniqueFriendsIds = uniquefyArray(friendsIds);
+        var friendsToReturn = Meteor.users.find( {_id: { $in: uniqueFriendsIds } } );
+        var friends = Meteor.users.find({_id: { $in: uniqueFriendsIds } } );
         return {
-          user : Meteor.users.findOne({_id : _id})
+          user: Meteor.users.findOne({_id : _id}),
+          title: "titulo dessa porra aqui",
+          friends:friends,
         }
       }
     });

@@ -12,22 +12,20 @@ function uniquefyArray(arrayToCheck) {
     return unique;
 }
 
-
 Template.leaderboard.helpers({
-  friends : function(){
+  /*friends : function(){
     var ids = Friendships.followersAndFollowings(Meteor.userId());
     var friendsIds = new Array();
     ids.map(function(friend){//maps if the user has being added by the friend or added the friend.
       friendsIds.push( (friend.userId === Meteor.userId()) ? friend.friendId : friend.userId);
     });
     uniqueFriendsIds = uniquefyArray(friendsIds);
-    console.log(uniqueFriendsIds);
-    var friends = Meteor.users.find( {_id: { $in: uniqueFriendsIds } } );
-    console.log('friends');
-    console.log(friends);
-    friends.map(function(f){console.log(f);});
-    return friends;
-  },
+    console.log(typeof Meteor.users);
+    var x = Meteor.users.find({});
+    console.log(x);
+    return [{'_id': 'gui'}, {'_id' :'gui2'}];
+
+  },*/
 });
 
 Template.leaderboard.events({
