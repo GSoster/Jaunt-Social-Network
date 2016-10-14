@@ -6,7 +6,7 @@
                     <legend>New post</legend>
                     <div class="row">
                         <div class="col-sm-9">
-                            <textarea cols="2" class="form-control"></textarea>
+                            <textarea id="newPostTextArea" cols="2" class="form-control"></textarea>
                         </div>
                         <div class="col-sm-1">
                             <button class="btn btn-lg">
@@ -18,4 +18,12 @@
             </form>
         </div>
     </div>
+    <script>
+    /*this needs to be loaded after the textarea*/
+      /*tinymce.init({
+        selector: 'textarea',
+        skin_url: 'resources/lightgray'
+        skin_url: '/packages/teamon_tinymce/skins/lightgray',
+      });*/
+      </script>
 </template>
