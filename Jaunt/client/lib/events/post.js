@@ -17,14 +17,12 @@ Template.post.events({
 });
 
 Template.post.onRendered(function() {
-    console.log("renderizou!");
     tinymce.EditorManager.editors = []; //we need to remove the old instances.
     tinymce.init({
       selector: '#newPostTextArea',
-      height : 300,
+      /*height : 200,*/
       skin_url: '/packages/teamon_tinymce/skins/lightgray',
       menubar: false,
       statusbar: false
     });
-    console.log("carregou o skin");
 });

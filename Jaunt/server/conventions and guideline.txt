@@ -16,6 +16,9 @@ Call -> call specific functions encapsuled in methods.
 #CSS classes:
     -> that will be used as JS selector need to have js in the beginning plus a underscore and the following letter should be lowercase: js-    myTimeline.
 
+#HTML render in templates
+Use {{{field}}} instead of {{field}} in your HTML template if you want the HTML code in field to be interpreted as HTML code (and not escaped).
+
 
 #Collections:
     -> Collections should be named as a plural noun. ex.:   Lists = new Mongo.Collection('Lists');
