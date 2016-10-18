@@ -11,10 +11,15 @@ Template.timeline.events({
 
 
 Template.timeline.helpers({
+  /*the player needs at least 35 points to enable emoticons on his comments*/
   isEmoticonEnabled : function(){
-    var points = Points.pointsCountFromUser(Meteor.userId());
-    console.log(points);
-    return true;
+    var points =  Points.listPointsFromUser(Meteor.userId());
+    var totalPoints = 0;
+    points.map(function(x){totalPoints += x.points;});
+    if (totalPoints > 35){
+      return true;
+    }
+    return false;
   }
 
 });
