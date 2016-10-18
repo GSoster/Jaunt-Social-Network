@@ -13,6 +13,6 @@ Points.increasePontuation = function (points, type, userId) {
 Points.pointsCountFromUser = function (userId){
     return this.find({userId : userId}).count();
 };
-Points.listPointsFromUser = function(userId){  
+Points.listPointsFromUser = function(userId){    
   return this.find({userId : userId});
 };

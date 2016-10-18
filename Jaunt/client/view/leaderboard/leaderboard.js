@@ -16,5 +16,19 @@ function uniquefyArray(arrayToCheck) {
  * the helpers of leaderboard.html are hosted in the route file
  */
 Template.leaderboard.helpers({});
-
 Template.leaderboard.events({});
+
+/**
+* leaderboardFriend template (it is hosted on the same html file as leaderboard)
+*/
+Template.leaderboardFriend.helpers({
+  getFriendTotalPoints: function(friendId){
+    console.log(friendId);
+    var points =  Points.listPointsFromUser(friendId);
+    console.log(points);
+    var totalPoints = 0;
+    points.map(function(x){totalPoints += x.points;});
+    return totalPoints;
+  }
+
+});
