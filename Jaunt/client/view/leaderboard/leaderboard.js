@@ -24,11 +24,10 @@ Template.leaderboard.events({});
 Template.leaderboardFriend.helpers({
   getFriendTotalPoints: function(friendId){
     console.log(friendId);
-    var points =  Points.listPointsFromUser(friendId);
+    var points =  Points.fetchPointsFromUser(friendId);
     console.log(points);
     var totalPoints = 0;
     points.map(function(x){totalPoints += x.points;});
     return totalPoints;
   }
-
 });

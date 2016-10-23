@@ -25,5 +25,6 @@ Points.listPointsFromUser = function (userId){
 * returns an array of points documents (to be worked with in functions).
 */
 Points.fetchPointsFromUser = function (userId) {
+  console.log('db.points.find({"userId": "'+userId+'"});');
   return this.find({userId : userId}).fetch();
 };
