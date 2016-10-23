@@ -74,8 +74,7 @@ Router.map(function(){
         this.subscribe("isFollowing", _id);
         this.subscribe("user", _id);
         this.subscribe("achievements", _id);
-        this.subscribe("points", _id);
-        console.log("Buscando infos de: ", _id);
+        this.subscribe("points", _id);        
         this.next();
       },
       data : function(){
