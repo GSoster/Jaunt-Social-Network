@@ -9,7 +9,9 @@ Template.user.helpers({
     return totalPoints;
   },
   commentPoints : function(){
-    var points =  Points.listPointsFromUser(Meteor.userId());
+    //var points =  Points.listPointsFromUser(Meteor.userId());
+    console.log("user sendo visto: ", this.userId);//this contains data by the router
+    var points =  Points.fetchPointsFromUser(Meteor.userId());
     commentPoints = 0;
     points.map(function(p){
       if(p.type === "comment"){
@@ -28,6 +30,13 @@ Template.user.helpers({
     });
     return postPoints;
   },
+  pointsFetched : function(){
+    var points =  Points.fetchPointsFromUser(Meteor.userId());
+    console.log("##fetch##");
+    console.log(points);
+    console.log("##fetch##");
+    return 0;
+  }
 });
 
 

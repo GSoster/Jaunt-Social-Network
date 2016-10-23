@@ -75,6 +75,7 @@ Router.map(function(){
         this.subscribe("user", _id);
         this.subscribe("achievements", _id);
         this.subscribe("points", _id);
+        console.log("Buscando infos de: ", _id);
         this.next();
       },
       data : function(){
@@ -87,6 +88,7 @@ Router.map(function(){
           posts : Posts.find({}),
           followers : Friendships.followers(_id),
           followings : Friendships.followings(_id),
+          userId: _id,
         }
       }
     });
