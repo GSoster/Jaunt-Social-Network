@@ -74,9 +74,10 @@ Router.map(function(){
         this.subscribe("isFollowing", _id);
         this.subscribe("user", _id);
         this.subscribe("achievements", _id);
-        this.subscribe("points", _id);        
+        this.subscribe("points", _id);
         this.next();
       },
+      /*the data inside 'data' below can be accessed in template helpers through 'this': this.user*/
       data : function(){
         var _id = this.params._id;//other user id (the one which the profile our currentUser is visiting )
         var isFollowing = Friendships.isFollowing(_id);
@@ -87,7 +88,6 @@ Router.map(function(){
           posts : Posts.find({}),
           followers : Friendships.followers(_id),
           followings : Friendships.followings(_id),
-          userId: _id,
         }
       }
     });
