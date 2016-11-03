@@ -1,5 +1,6 @@
 <template name="home">
     {{#if currentUser}}
+    <div class='row'>
     <aside class="col-sm-3">
         {{> profile}}
         {{> friendship}}
@@ -11,10 +12,13 @@
         {{> post}}
         <!-- option to choose between timelines-->
         {{> timelineLinkOptions}}
-        <div class="row">
-            {{> timeline}}
-        </div>
     </section>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        {{> timeline}}
+      </div>
+    </div>
     {{else}}
     <div class="text-center">
         <h1>Jaunt</h1>

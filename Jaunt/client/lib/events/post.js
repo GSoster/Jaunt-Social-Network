@@ -11,6 +11,7 @@ Template.post.events({
         //the method above does all the trick ;)
         jauntAchievementsRules.checkAndUnlockPostAchievementByCondition(Meteor.userId());
         jauntNotifications.defaultPostPublised();
+        tinyMCE.activeEditor.setContent('');
         textarea.value = "";
         return false;
     }

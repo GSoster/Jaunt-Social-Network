@@ -22,3 +22,7 @@ client/view/home/home.html
     padding: 0, 5px 0 5px;
     font-style: none;
 }
+
+/*## GRID */
+.grid-item { width: 25%; }
+.grid-item--width2 { width: 50%; }
