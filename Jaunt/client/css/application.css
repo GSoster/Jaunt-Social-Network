@@ -2,7 +2,7 @@ body {
     /*background-color: cornflowerblue;*/
     background-color: #337AB7;
     background-image: url("resources/bg.jpg");
-    background-size: cover;
+    background-size: contain;;
 }
 
 .container {
@@ -25,6 +25,7 @@ client/view/home/home.html
     font-style: none;
 }
 
-/*## GRID */
+/*## GRID ##*/
+/* this is to be used with isotope or masonry*/
 .grid-item { width: 25%; }
 .grid-item--width2 { width: 50%; }

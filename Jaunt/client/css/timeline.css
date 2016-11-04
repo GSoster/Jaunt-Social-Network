@@ -20,7 +20,7 @@
 
 .postDisplayed{
   /*underline*/
-  color: #ff3296;
+	color: #283551;
   position: relative;
 	overflow: hidden;
 }
@@ -31,7 +31,6 @@
   bottom: -10px;
   width: 0;
   height: 7px;
-  /*background-color: #98004a;*/
 	background-color: #53a7ea;
   content: "";
   transition: width 0.2s;
