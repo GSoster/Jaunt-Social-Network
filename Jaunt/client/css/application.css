@@ -1,6 +1,8 @@
 body {
     /*background-color: cornflowerblue;*/
     background-color: #337AB7;
+    background-image: url("resources/bg.jpg");
+    background-size: cover;
 }
 
 .container {

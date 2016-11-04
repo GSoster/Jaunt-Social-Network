@@ -1,29 +1,10 @@
 <template name="timeline">
     <div class="row">
         <fieldset class="col-sm-12">
-            <legend>{{timelineTitle}}</legend>
+            <legend class="text-center">{{timelineTitle}}</legend>
             {{> commentModal}}
             {{#each posts}}
-            <blockquote class="lead postDisplayed"  tabindex="0" id="{{_id}}">
-              <p>{{{message}}}</p>
-                <small>
-                  <span class='text-muted'>Author: <a href="/user/{{userId}}">{{name}}</a></span>
-                  <span>Date: </span>{{date}}
-                  <a href=""><span id="js-commentPost" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
-                </small>
-                <div class="commentSession">
-                  {{#each comments}}
-                  <div class="commentWrapperOnTimeline">
-                    <span class='text-muted userNameOnComment'><a href="/user/{{userId}}">{{userName}}</a>:</span>
-                    {{#if isEmoticonEnabled}}
-                      <span class='textOnComment'>{{{parseEmoticons text}}}</span><br>
-                    {{else}}
-                      <span class='textOnComment'>{{text}}</span><br>
-                    {{/if}}
-                  </div>
-                  {{/each}}
-                </div>
-            </blockquote>
+              {{> postOnTimeline}}
             {{else}}
             <p class="lead text-center">
                 {{noPostsMessage}}
@@ -31,4 +12,27 @@
             {{/each}}
         </fieldset>
     </div>
+</template>
+
+<template name="postOnTimeline">
+  <blockquote class="lead postDisplayed"  tabindex="0" id="{{_id}}">
+    <p class="postMessage">{{{message}}}</p>
+      <small>
+        <span class='text-muted'>Author: <a href="/user/{{userId}}">{{name}}</a></span>
+        <span>Date: </span>{{date}}
+        <a href=""><span id="js-commentPost" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+      </small>
+      <div class="commentSession">
+        {{#each comments}}
+        <div class="commentWrapperOnTimeline">
+          <span class='text-muted userNameOnComment'><a href="/user/{{userId}}">{{userName}}</a>:</span>
+          {{#if isEmoticonEnabled}}
+            <span class='textOnComment'>{{{parseEmoticons text}}}</span><br>
+          {{else}}
+            <span class='textOnComment'>{{text}}</span><br>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+  </blockquote>
 </template>

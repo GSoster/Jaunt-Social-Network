@@ -12,7 +12,7 @@ Template.post.events({
         jauntAchievementsRules.checkAndUnlockPostAchievementByCondition(Meteor.userId());
         jauntNotifications.defaultPostPublised();
         tinyMCE.activeEditor.setContent('');
-        textarea.value = "";
+        textarea.value = "";/*to clean textarea when there is no tinyMCE*/
         return false;
     }
 });
