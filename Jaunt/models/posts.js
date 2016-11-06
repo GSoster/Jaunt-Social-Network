@@ -15,6 +15,17 @@ Posts.publish = function (message, name) {
 
 };
 
+Posts.publishWithColor = function (message, name, color) {
+    this.insert({
+        message: message,
+        date: new Date(),
+        userId: Meteor.userId(),
+        name : name,
+        color: color,
+    });
+
+};
+
 /**
  * Lists all the posts from an user
  * @param {int} userId

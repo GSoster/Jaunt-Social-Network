@@ -19,9 +19,10 @@
 
 <template name="postOnTimelineGrid">
   <!--<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 semPadding" tabindex="0" id="{{_id}}">-->
-  <div class="grid-item" tabindex="0" id="{{_id}}">
+  <div class="grid-item" tabindex="0" id="{{_id}}" style="background: {{color}}">
     <p class="postMessage">{{{message}}}</p>
       <small>
+        color: {{color}}
         <span class='text-muted'>Author: <a href="/user/{{userId}}">{{name}}</a></span>
         <span>Date: </span>{{date}}
         <a href=""><span id="js-commentPost" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>

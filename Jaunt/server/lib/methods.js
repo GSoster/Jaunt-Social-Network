@@ -24,6 +24,9 @@ Meteor.methods({
   publishPost : function(message, name){
     Posts.publish(message, name);
   },
+  publishPostWithColor : function(message, name, color){
+    Posts.publishWithColor(message, name, color);
+  },
   commentOnPost : function(comment, postId){
     Posts.commentOnPost(comment, postId);
   }
