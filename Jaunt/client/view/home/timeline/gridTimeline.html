@@ -1,0 +1,42 @@
+<template name="gridTimeline">
+  <div class="row">
+      <div class="col-sm-12">
+          <legend class="text-center">{{timelineTitle}}</legend>
+          {{> commentModal}}
+          <!-- <div class="row color"> -->
+          <div class="grid">
+          {{#each posts}}
+            {{> postOnTimelineGrid}}
+          {{else}}
+          <p class="lead text-center">
+              {{noPostsMessage}}
+          </p>
+          {{/each}}
+        </div>
+      </div>
+  </div>
+</template>
+
+<template name="postOnTimelineGrid">
+  <!--<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 semPadding" tabindex="0" id="{{_id}}">-->
+  <div class="grid-item" tabindex="0" id="{{_id}}">
+    <p class="postMessage">{{{message}}}</p>
+      <small>
+        <span class='text-muted'>Author: <a href="/user/{{userId}}">{{name}}</a></span>
+        <span>Date: </span>{{date}}
+        <a href=""><span id="js-commentPost" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+      </small>
+      <div class="commentSession">
+        {{#each comments}}
+        <div class="commentWrapperOnTimeline">
+          <span class='text-muted userNameOnComment'><a href="/user/{{userId}}">{{userName}}</a>:</span>
+          {{#if isEmoticonEnabled}}
+            <span class='textOnComment'>{{{parseEmoticons text}}}</span><br>
+          {{else}}
+            <span class='textOnComment'>{{text}}</span><br>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+  </div>
+</template>
