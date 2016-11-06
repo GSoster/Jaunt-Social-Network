@@ -71,3 +71,34 @@
 	font-weight: 300;
 	line-height: 24px;
 }
+
+/* cards colors */
+.turquoise{
+	background: #1abc9c;
+}
+
+.emerald{
+	background: #2ecc71;
+}
+
+.peterRiver{
+	background: #3498db;
+}
+.amethyst{
+	background: #9b59b6;
+}
+.wetAsphalt{
+	background: #34495e;
+}
+.greenSea{
+	background: #16a085;
+}
+.carrot{
+	background: #e67e22;
+}
+.sunFLower{
+	background: #f1c40f;
+}
+.alizarin{
+	background: #e74c3c;
+}
