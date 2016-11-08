@@ -102,3 +102,16 @@
 .alizarin{
 	background: #e74c3c;
 }
+
+/*COMMENT ICONE ON TIMELINE/GRIDTIMELINE*/
+.commentIcone{
+/*	display: inline-block;*/
+background-color: white;
+padding: 5px;
+border-radius: 50%;
+color: #6d6d6d;
+width: 30px;
+height: 30px;
+text-align: center;
+font-size: 18px;
+}
