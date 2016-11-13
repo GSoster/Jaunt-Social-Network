@@ -17,6 +17,7 @@ Template.post.events({
         }
         /*Meteor.call("publishPost", textarea.value, name);*/
         cardColor = colorPicker();
+        //$('#cardsColor').value;//gets card Color
         Meteor.call("publishPostWithColor", textarea.value, name, cardColor);
         Meteor.call("increasePontuation", 5, 'post', Meteor.userId());//give points to user after a new post
         //the method above does all the trick ;)
