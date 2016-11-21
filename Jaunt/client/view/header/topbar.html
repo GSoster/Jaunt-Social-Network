@@ -3,9 +3,11 @@
     <div class="col-xs-12 col-sm-6">
       {{> searchFriend}}
     </div>
+     {{#if currentUser}}
     <div class="col-xs-12 col-sm-6">
-      Total Points: 300<!-- this has to be removed and the real total amount of points displayed here. -->
+      Total Points: {{currentUser.totalPoints}}<!-- this has to be removed and the real total amount of points displayed here. -->
     </div>
+    {{/if }}
   </div>
 
 </template>

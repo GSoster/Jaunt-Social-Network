@@ -39,8 +39,7 @@ Meteor.methods({
     //it will also add the total amount of points directly to the user documents
     var points =  Points.listPointsFromUser(userId);
     var totalPoints = 0;
-    points.map(function(x){totalPoints += x.points;});
-    console.log('will insert ' + totalPoints + ' to the user ' + userId);
+    points.map(function(x){totalPoints += x.points;});    
     Meteor.users.update(userId, {$set: {"totalPoints": totalPoints}});
   },
 });
