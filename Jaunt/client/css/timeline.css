@@ -14,9 +14,6 @@
 	}
 }
 
-.postMessage{
-	overflow: hidden;
-}
 
 .postDisplayed{
   /*underline*/
@@ -63,13 +60,16 @@
 	line-height: 24px;
 }
 
-.textOnComment{
-	color: rgb(119, 119, 119);
+.textOnComment,.postMessage, a{
+	/*color: rgb(119, 119, 119);*/
+	padding-left: 2px;
+	color: rgba(255,255,255,0.95);
 	box-sizing: border-box;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 0.8em;
-	font-weight: 300;
+	font-weight: bolder;;
 	line-height: 24px;
+	overflow: hidden;
 }
 
 /* cards colors */
@@ -116,6 +116,6 @@ text-align: center;
 font-size: 18px;
 }
 
-#postAuthor{
+.postAuthor{
 	color: white;
 }

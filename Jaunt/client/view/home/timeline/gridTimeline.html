@@ -22,14 +22,14 @@
   <div class="grid-item" tabindex="0" id="{{_id}}" style="background: {{color}}">
     <p class="postMessage">{{{message}}}</p>
       <small>
-        <a href="/user/{{userId}}" id='postAuthor'>{{name}}</a>
+        <a href="/user/{{userId}}" class='postAuthor'>{{name}}</a>
         <span>{{date}}</span>
         <a class="commentIcone" href=""><span id="js-commentPost" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
       </small>
       <div class="commentSession">
         {{#each comments}}
         <div class="commentWrapperOnTimeline">
-          <span class='text-muted userNameOnComment'><a href="/user/{{userId}}">{{userName}}</a>:</span>
+          <span class='text-muted userNameOnComment'><a href="/user/{{userId}}" class='postAuthor'>{{userName}}</a>:</span>
           {{#if isEmoticonEnabled}}
             <span class='textOnComment'>{{{parseEmoticons text}}}</span><br>
           {{else}}
