@@ -18,6 +18,7 @@
 .postDisplayed{
   /*underline*/
 	color: #283551;
+	background-color: rgba(24,189,241, 0.7);
   position: relative;
 	overflow: hidden;
 }
@@ -60,7 +61,7 @@
 	line-height: 24px;
 }
 
-.textOnComment,.postMessage, a{
+.textOnComment,.postMessage{
 	/*color: rgb(119, 119, 119);*/
 	padding-left: 2px;
 	color: rgba(255,255,255,0.95);
