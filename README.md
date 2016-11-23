@@ -9,7 +9,7 @@ The main point for users interaction is the timeline, We’ve crafted two handso
 
 ### Project Structure
 The project aims to be modular so developers can easily develop and integrate new features.
-The root project folder consists of:
+The root project folder consists of:<br>
 <b>/client</b> -> here is where we can find all code related with client. <br>
 <b>/server</b> -> server code (database queries and so on). <br>
 <b>/public</b> -> assets to be used in the client (eg.: images). <br>
