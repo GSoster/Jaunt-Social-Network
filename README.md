@@ -10,10 +10,10 @@ The main point for users interaction is the timeline, We’ve crafted two handso
 ### Project Structure
 The project aims to be modular so developers can easily develop and integrate new features.
 The root project folder consists of:
-/client -> here is where we can find all code related with client.
-/server -> server code (database queries and so on).
-/public -> assets to be used in the client (eg.: images).
-/model -> database collections.
+<b>/client</b> -> here is where we can find all code related with client. <br>
+<b>/server</b> -> server code (database queries and so on). <br>
+<b>/public</b> -> assets to be used in the client (eg.: images). <br>
+<b>/model</b> -> database collections. 
 
 The content inside client is divided in a way that each feature has 3 files.
 eg: /leaderboard has a leaderboard.js that handles requests/events and provide data to the template. leaderboard.html is the template that defines how the data should be displayed. leaderboard.css styles the template.
