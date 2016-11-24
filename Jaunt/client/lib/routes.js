@@ -36,6 +36,7 @@ Router.map(function(){
         this.subscribe("friendship", _id);
         this.subscribe("latestGlobalPosts");//latet 100 posts in the social network
         this.subscribe("points", _id);
+        this.subscribe("users", _id);//to be able to search for all users
         this.subscribe("achievements", _id);//test
         this.subscribe("postsFromUser", _id);//ŧest
         this.subscribe("user", _id);//test
