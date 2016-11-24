@@ -21,11 +21,12 @@ Template.challengeModal.events({
       completed: false,
       completedOn: null,
     };
+    Meteor.call('challengeUser', friendId, Meteor.userId());//this method handles points too.
     //Meteor.call('commentOnPost', comment, postId);
     //jauntNotifications.defaultCommentPublised();//calls notification
     console.log(challenge);
     $('#challengeModal').modal('hide');//dimiss modal
-    return;    
+    return;
   },
 
 });

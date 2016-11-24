@@ -29,8 +29,13 @@ Meteor.methods({
   },
   commentOnPost : function(comment, postId){
     Posts.commentOnPost(comment, postId);
-  }
-  ,
+  },
+  challengeUser : function (challenge, challengedUserId, challengedByUserId){
+    var userDoc = Meteor.users.find(challengedUserId);
+    var challengesDoc = userDoc.challenges;
+    challengesDoc.push(challenge);
+    Meteor.users.update(challengedUserId, {$set: {"challenges": challengesDoc}});
+  },
   addAchievement : function(achievement, userId){
     Achievements.addAchievement(achievement, userId);
   },

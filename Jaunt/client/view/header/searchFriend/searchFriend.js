@@ -15,7 +15,7 @@ Template.searchFriend.events({
     resultQuery.map((x) => {
       $("#friendsList").append('<li class="friendListItem"><a href="/user/'+x._id+'"><span class="tab">'+x.profile.firstName+'</span></a></li>');
     });
-    console.log(resultQuery);
+    //console.log(resultQuery);//debug
   }
 });
 
