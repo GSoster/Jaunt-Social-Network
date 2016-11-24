@@ -12,6 +12,9 @@ Template.post.events({
         e.preventDefault();
         var textarea = template.find("textarea");
         var name = Meteor.user().profile.firstName;
+        if(textarea.value.length === 0){
+          return;
+        }
         if (Meteor.user().profile.lastName) {
             name += ' ' + Meteor.user().profile.lastName;
         }

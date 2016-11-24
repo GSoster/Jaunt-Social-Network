@@ -11,6 +11,11 @@ Template.commentModal.events({
   "click #js-commentModal-save": function(event, template){
     event.preventDefault();
     var commentText = $('#userComment').val();
+    if(commentText.length === 0){
+      console.warn("Comment length can't be zero.");
+      $('#commentModal').modal('hide');//dimiss modal
+      return false;
+    }
     var postId = Session.get('postBeingCommented');
     var comment = {
       userId: Meteor.userId(),
