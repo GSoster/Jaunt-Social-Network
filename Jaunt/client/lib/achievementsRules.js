@@ -137,7 +137,8 @@ jauntAchievementsRules.checkAndUnlockPostAchievementByCondition = function(userI
             var exists = Achievements.checkAchievementByCondition(userId, achievement.conditionValue);
             if (!exists.hasOwnProperty('achieved') || !exists.achieved) {
                 Meteor.call("addAchievement", achievement, Meteor.userId());
-                jauntNotifications.achievementCommentPublishedNotification(achievement.conditionValue + ' Comment published!');
+                //jauntNotifications.achievementCommentPublishedNotification(achievement.conditionValue + ' Posts published!');
+                jauntNotifications.achievementPostPublishedNotification(achievement.conditionValue + ' Post published!');
             }
         }
     }
@@ -156,7 +157,8 @@ jauntAchievementsRules.checkAndUnlockCommentAchievementByCondition = function(us
             var exists = Achievements.checkAchievementByCondition(userId, achievement.conditionValue);
             if (!exists.hasOwnProperty('achieved') || !exists.achieved) {
                 Meteor.call("addAchievement", achievement, Meteor.userId());
-                jauntNotifications.achievementPostPublishedNotification(achievement.conditionValue + ' Post published!');
+                //jauntNotifications.achievementPostPublishedNotification(achievement.conditionValue + ' Post published!');//old, it seems that it was in the place of comments
+                jauntNotifications.achievementCommentPublishedNotification(achievement.conditionValue + ' Comment published!');
             }
         }
     }
