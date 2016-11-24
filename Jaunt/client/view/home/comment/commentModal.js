@@ -24,6 +24,7 @@ Template.commentModal.events({
     $('#userComment').val('');//cleans the modal textbox
     $('#commentModal').modal('hide');//dimiss modal
     jauntNotifications.defaultCommentPublised();//calls notification
+    jauntAchievementsRules.checkAndUnlockCommentAchievementByCondition(Meteor.userId());
     return false;
   },
 

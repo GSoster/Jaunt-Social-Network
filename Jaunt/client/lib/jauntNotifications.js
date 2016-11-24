@@ -9,7 +9,7 @@ jauntNotifications.achievementPostPublishedNotification = function(message){
 };
 
 jauntNotifications.achievementCommentPublishedNotification = function(message){
-  sAlert.success(message + '<img width="40px" height="40px" src="resources/achievementsImages/achievement_firstPost.png" alt="foi">', {position: 'bottom-right', timeout: 'none', html: true});
+  sAlert.success(message + '<img width="40px" height="40px" src="resources/achievementsImages/achievement_firstComment.png" alt="foi">', {position: 'bottom-right', timeout: 'none', html: true});
 };
 
 
