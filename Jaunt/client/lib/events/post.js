@@ -13,6 +13,7 @@ Template.post.events({
         var textarea = template.find("textarea");
         var name = Meteor.user().profile.firstName;
         if(textarea.value.length === 0){
+          console.warn("Post length can't be zero.");
           return;
         }
         if (Meteor.user().profile.lastName) {
