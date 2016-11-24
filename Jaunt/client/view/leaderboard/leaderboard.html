@@ -20,7 +20,7 @@
 
 
 <template name="leaderboardFriend">
-  <div class="col-xs-12 col-sm-6 leaderboardFriendBoard">
+  <div class="col-xs-12 col-sm-6 leaderboardFriendBoard" id="{{_id}}">
     <!-- shows information of each -->
       <div class="col-xs-12">
         <a href="/user/{{_id}}">{{profile.firstName}}</a><br>
@@ -30,11 +30,11 @@
        </div>
        <div class="col-xs-12">
          <span class="glyphicon glyphicon-gift">
-           <button type="button" class="btn btn-success btn-sm">Challange!</button>
+           <button type="button" class="btn btn-success btn-sm" id="js-challengeFriend">Challange!</button>
          </span>
        </div>
        <div class="col-xs-12">
-         friend's total points:{{totalPoints}} <!--{{getFriendTotalPoints _id}}-->
+         friend's total points:{{totalPoints}}
        </div>
        <div class="col-xs-6">
          Post points: {{postPoints}}
@@ -48,12 +48,6 @@
       {{#each achievements}}
         {{> leaderboardUserAchievement}}
       {{/each}}
-       <!--<div class="col-xs-6">
-         <img src='/resources/achievementsImages/achievement_firstPost.png' width="50px" height="50px"/> First Comment!
-       </div>
-       <div class="col-xs-6">
-         <img src='/resources/achievementsImages/achievement_firstPost.png' width="50px" height="50px"/> First Post!
-       </div>-->
   </div>
 </template>
 

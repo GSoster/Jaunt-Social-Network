@@ -16,7 +16,15 @@ function uniquefyArray(arrayToCheck) {
  * the helpers of leaderboard.html are hosted in the route file
  */
 Template.leaderboard.helpers({});
-Template.leaderboard.events({});
+Template.leaderboard.events({
+  "click #js-challengeFriend" : function(event, template){
+      event.preventDefault();
+      var friendId = this._id;
+      console.log("friendId: " + friendId);
+      $('#commentModal').modal('show');
+  }
+
+});
 
 /**
 * leaderboardFriend template (it is hosted on the same html file as leaderboard)
