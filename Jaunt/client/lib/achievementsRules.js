@@ -133,7 +133,7 @@ jauntAchievementsRules.checkAndUnlockPostAchievementByCondition = function(userI
     var postsCount = Posts.postsCountFromUser(userId);
     for (var i = 0; i < jauntAchievementsRules.postAchievements.length; i++) {
         var achievement = jauntAchievementsRules.postAchievements[i];
-        if (achievement.conditionValue === postsCount) {
+        if (achievement.conditionValue === postsCount +1) {
             var exists = Achievements.checkAchievementByCondition(userId, achievement.conditionValue);
             if (!exists.hasOwnProperty('achieved') || !exists.achieved) {
                 Meteor.call("addAchievement", achievement, Meteor.userId());
