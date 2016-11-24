@@ -4,6 +4,7 @@ Accounts.onCreateUser(function (options, user) {
     user['commentPoints'] = 0;
     user['postPoints'] = 0;
     user['achievements'] = [];
+    user['usablePoints'] = 0;
     user['challenges'] = [];
     return user;
 });
