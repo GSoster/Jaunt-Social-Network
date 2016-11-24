@@ -16,6 +16,21 @@ Achievements.addAchievement = function (achievement, userId) {
       conditionValue: achievement.conditionValue,
       achieved: true
     });
+
+    var userDoc = Meteor.users.findOne({_id: userId});
+    var achievementsDoc = userDoc.achievements;
+    achievementsDoc.push({
+      userId: userId,
+      date: new Date(),
+      achievementId: achievement.achievementId,
+      title: achievement.title,
+      type: achievement.type,
+      description : achievement.description,
+      image: achievement.image,
+      conditionValue: achievement.conditionValue,
+      achieved: true
+    });
+    Meteor.users.update(userId, {$set: {"achievements": achievementsDoc}});
 };
 
 
