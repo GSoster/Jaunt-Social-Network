@@ -20,7 +20,7 @@ Template.commentModal.events({
       postId: postId
     };
     Meteor.call('commentOnPost', comment, postId);
-    Meteor.call("increasePontuation", 2, 'comment', Meteor.userId());
+    Meteor.call("increasePontuation", jauntAchievementsRules.CommentPointsIncrease, 'comment', Meteor.userId());
     $('#userComment').val('');//cleans the modal textbox
     $('#commentModal').modal('hide');//dimiss modal
     jauntNotifications.defaultCommentPublised();//calls notification

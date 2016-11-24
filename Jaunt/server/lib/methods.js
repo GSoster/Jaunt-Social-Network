@@ -39,7 +39,18 @@ Meteor.methods({
     //it will also add the total amount of points directly to the user documents
     var points =  Points.listPointsFromUser(userId);
     var totalPoints = 0;
-    points.map(function(x){totalPoints += x.points;});    
+    points.map(function(x){totalPoints += x.points;});
     Meteor.users.update(userId, {$set: {"totalPoints": totalPoints}});
+
+    if(type === "comment"){
+      var commentPoints = Points.getCommentPointsFromUser(userId);
+      var updatedCommentPoints = commentPoints + pointsToIncrease;
+      Meteor.users.update(userId, {$set: {"commentPoints": updatedCommentPoints}});
+    }
+    if(type === "post"){
+      var postPoints = Points.getPostPointsFromUser(userId);
+      var updatedPostPoints = postPoints + pointsToIncrease;
+      Meteor.users.update(userId, {$set: {"postPoints": updatedPostPoints}});
+    }
   },
 });

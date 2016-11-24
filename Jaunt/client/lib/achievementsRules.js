@@ -1,5 +1,8 @@
 jauntAchievementsRules = {};
 
+jauntAchievementsRules.CommentPointsIncrease = 2;
+jauntAchievementsRules.PostPointsIncrease = 5;
+
 jauntAchievementsRules.postAchievements = [{
     achievementId: 1,
     title: 'First Post',
@@ -148,7 +151,8 @@ jauntAchievementsRules.checkAndUnlockPostAchievementByCondition = function(userI
 
 jauntAchievementsRules.checkAndUnlockCommentAchievementByCondition = function(userId) {
     var commentsCount = 1; //need to refactor
-    console.log("total:");
+    var commentsCount = (Points.getCommentPointsFromUser(userId) / jauntAchievementsRules.CommentPointsIncrease);
+    console.log("total:", commentsCount);
     //console.log(Posts.commentsCountFromUser(userId));
     console.log('t');
     for (var i = 0; i < jauntAchievementsRules.commentAchievements.length; i++) {
