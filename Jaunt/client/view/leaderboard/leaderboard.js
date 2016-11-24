@@ -21,7 +21,8 @@ Template.leaderboard.events({
       event.preventDefault();
       var friendId = this._id;
       console.log("friendId: " + friendId);
-      $('#commentModal').modal('show');
+      Session.set('friendBeingChallenged', friendId);
+      $('#challengeModal').modal('show');
   }
 
 });
