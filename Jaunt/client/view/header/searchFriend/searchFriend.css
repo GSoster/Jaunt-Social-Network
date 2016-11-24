@@ -6,8 +6,13 @@
   color: grey;
   font-weight: lighter;
 }
-.friendsList{
+.friendsList, .friendsList li{
   text-decoration: none;
   list-style: none;
   z-index: -1;
+}
+
+.friendListItem{
+  list-style: none;
+  text-decoration: none;
 }
