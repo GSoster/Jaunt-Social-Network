@@ -31,3 +31,9 @@ Template.leaderboardFriend.helpers({
     return totalPoints;
   }
 });
+
+Template.leaderboardUserAchievement.helpers({
+    formatedDate: function(date){
+      return jauntAchievementsRules.formatDate(date);
+    }
+});

@@ -40,11 +40,23 @@
        <div class="col-xs-12">
          Achievements<br>
       </div>
-       <div class="col-xs-6">
+      {{#each achievements}}
+        {{> leaderboardUserAchievement}}
+      {{/each}}
+       <!--<div class="col-xs-6">
          <img src='/resources/achievementsImages/achievement_firstPost.png' width="50px" height="50px"/> First Comment!
        </div>
        <div class="col-xs-6">
          <img src='/resources/achievementsImages/achievement_firstPost.png' width="50px" height="50px"/> First Post!
-       </div>
+       </div>-->
+  </div>
+</template>
+
+<template name="leaderboardUserAchievement">
+  <div class="col-xs-6">
+    {{title}} on {{formatedDate date}}
+  </div>
+  <div class="col-xs-6">
+    <img src="{{image}}" width="50px" height="50px"/>
   </div>
 </template>

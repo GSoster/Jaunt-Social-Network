@@ -16,7 +16,7 @@ Template.gridTimeline.helpers({
     var points =  Points.listPointsFromUser(Meteor.userId());
     var totalPoints = 0;
     points.map(function(x){totalPoints += x.points;});
-    if (totalPoints > 35){
+    if (totalPoints > jauntAchievementsRules.EnableEmoticonsPointsRequired){
       return true;
     }
     return false;

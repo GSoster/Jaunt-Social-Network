@@ -2,6 +2,7 @@ jauntAchievementsRules = {};
 
 jauntAchievementsRules.CommentPointsIncrease = 2;
 jauntAchievementsRules.PostPointsIncrease = 5;
+jauntAchievementsRules.EnableEmoticonsPointsRequired = 20;
 
 jauntAchievementsRules.postAchievements = [{
     achievementId: 1,
@@ -151,7 +152,7 @@ jauntAchievementsRules.checkAndUnlockPostAchievementByCondition = function(userI
 
 jauntAchievementsRules.checkAndUnlockCommentAchievementByCondition = function(userId) {
     var commentsCount = 1; //need to refactor
-    var commentsCount = (Points.getCommentPointsFromUser(userId) / jauntAchievementsRules.CommentPointsIncrease);
+    var commentsCount = (Points.getCommentPointsFromUser(userId) / jauntAchievementsRules.CommentPointsIncrease) -1;
     console.log("total:", commentsCount);
     //console.log(Posts.commentsCountFromUser(userId));
     console.log('t');
@@ -167,3 +168,11 @@ jauntAchievementsRules.checkAndUnlockCommentAchievementByCondition = function(us
         }
     }
 };
+
+ /* helper functions */
+ jauntAchievementsRules.formatDate = function (date) {
+   var formatedDate = date.getDate() + '/' + (date.getMonth() + 1)  + '/' + date.getFullYear() + ' ';
+   formatedDate += (date.getHours().toString().length === 1) ? '0'+date.getHours() : date.getHours();
+   formatedDate += (date.getMinutes().toString().length === 1) ? ':0'+date.getMinutes() : ':'+date.getMinutes();
+   return formatedDate;
+ };
