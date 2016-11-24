@@ -1,0 +1,5 @@
+.leaderboardFriendBoard{
+  border:solid 1px grey;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
