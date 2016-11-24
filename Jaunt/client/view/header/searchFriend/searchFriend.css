@@ -1,0 +1,13 @@
+.searchFriend{
+  border-radius: 20px;
+  border: solid 1px grey;
+  font-family: monospace;
+  padding-left: 9px;
+  color: grey;
+  font-weight: lighter;
+}
+.friendsList{
+  text-decoration: none;
+  list-style: none;
+  z-index: -1;
+}
