@@ -31,8 +31,13 @@ Meteor.methods({
     Posts.commentOnPost(comment, postId);
   },
   challengeUser : function (challenge, challengedUserId, challengedByUserId){
+    console.log("------------------------------");
+    console.log("received: (challengedUser) "+challengedUserId);
+    console.log("received: (challengedByUserId) "+challengedByUserId);
+    console.log("received: (challenge) "+challenge);
+    console.log("------------------------------");
     var userDoc = Meteor.users.find(challengedUserId);
-    var challengesDoc = userDoc.challenges;
+    var challengesDoc = userDoc.challenges || [];
     challengesDoc.push(challenge);
     Meteor.users.update(challengedUserId, {$set: {"challenges": challengesDoc}});
   },

@@ -13,15 +13,16 @@ Template.challengeModal.events({
     var friendId = Session.get('friendBeingChallenged');
     console.log("Challenge called for the friend: " + friendId);
     var challenge = {
-      dateChallenged : new Date(),
+      ChallengedOn : new Date(),
       challengedUser: friendId,
       challengedBy: Meteor.userId(),
+      challengedByUserName: Meteor.user().profile.firstName + " " + Meteor.user().profile.lastName,
       pointsSpentToChallenge: 5,
       pointsToReceive: 2,
       completed: false,
       completedOn: null,
     };
-    Meteor.call('challengeUser', friendId, Meteor.userId());//this method handles points too.
+    Meteor.call('challengeUser',challenge,  friendId, Meteor.userId());//this method handles points too.
     //Meteor.call('commentOnPost', comment, postId);
     //jauntNotifications.defaultCommentPublised();//calls notification
     console.log(challenge);

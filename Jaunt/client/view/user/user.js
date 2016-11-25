@@ -1,4 +1,7 @@
 Template.user.helpers({
+  challenges : function(){
+    return Meteor.user().challenges || [];
+  },
   postsCount : function(){
     return Posts.postsCountFromUser(this.user._id);
   },
