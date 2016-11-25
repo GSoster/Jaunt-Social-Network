@@ -2,17 +2,15 @@
   <div class="modal fade" id="challengeModal">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-
         <div class="modal-header text-center">
           <h4 class="modal-title">Challenge!</h4>
         </div>
-
         <div class="modal-body">
-          <label for="comment"><small><span class="userNameOnComment">{{userName}}</span> Challenge your friend!</small></label>
-          With this challenge your friend will have to make a comment to win 2 points.
-          It will cost you 5 points.
+        Challenge your friend to:<br>
+        <input type="radio" disabled value="post" name="challengeType">Post<br>
+        <input type="radio" value="comment" name="challengeType" checked>Comment<br>
+        It will cost you <b> 5 points </b> and your friend will receive <b> 2 points </b>
         </div>
-
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" id="js-challengeModal-save">Challange</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
