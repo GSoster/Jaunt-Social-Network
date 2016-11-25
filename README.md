@@ -1,7 +1,7 @@
 # Jaunt-Social-Network
-Jaunt is a social network inspired by Twitter that aims to make social interaction more fun and gratifying.
-<a href='http://gsoster.github.io/Jaunt-Social-Network/'>http://gsoster.github.io/Jaunt-Social-Network/</a>
-
+Jaunt is a social network inspired by Twitter that aims to make social interaction more fun and gratifying.<br>
+Project site link: <a href='http://gsoster.github.io/Jaunt-Social-Network/' target="_blank">http://gsoster.github.io/Jaunt-Social-Network/</a><br>
+demo: <a href="http://ec2-52-67-182-246.sa-east-1.compute.amazonaws.com/" target="_blank">Jaunt demonstration</a><br>
 ### The Project .
 Jaunt is an open-source social network project that focus in the interaction among users. The main objective of this project is to offer and easy of use and delightful plataform for final users that is also modular and easily edited by developers.
 
