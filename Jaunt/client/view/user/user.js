@@ -75,3 +75,9 @@ Template.userProfilePoints.helpers({
     return postPoints;
   },
 });
+
+Template.userChallenges.helpers({
+  formatedDate: function(date){
+    return jauntAchievementsRules.formatDate(date);
+  },
+});
