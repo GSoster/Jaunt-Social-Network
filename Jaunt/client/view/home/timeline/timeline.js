@@ -9,6 +9,15 @@ Template.timeline.events({
   }
 });
 
+Template.postOnTimeline.helpers({
+  isEmoticonEnabled : function(){
+    var points = Meteor.user().totalPoints;
+    if(points >= jauntAchievementsRules.EnableEmoticonsPointsRequired){
+      return true;
+    }
+    return false;
+  }
+});
 
 Template.timeline.helpers({
   /*the player needs at least 35 points to enable emoticons on his comments*/

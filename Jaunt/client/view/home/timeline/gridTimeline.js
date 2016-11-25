@@ -32,7 +32,7 @@ Template.postOnTimelineGrid.helpers({
       return true;
     }
     return false;
-  }
+  },
 });
 
 Template.gridTimeline.onRendered(function(){
